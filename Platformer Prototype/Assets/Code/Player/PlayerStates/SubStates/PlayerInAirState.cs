@@ -6,6 +6,10 @@ public class PlayerInAirState : PlayerState
 {
     private int xInput;
     private bool isGrounded;
+    private bool coyoteTime;
+    private bool jumpInput;
+    private bool jumpInputStop;
+    private bool isJumping;
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
         
@@ -27,11 +31,21 @@ public class PlayerInAirState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        CheckCoyoteTime();
+
         xInput = player.InputHandler.NormInputX;
+        jumpInput = player.InputHandler.JumpInput;
+        jumpInputStop = player.InputHandler.JumpInputStop;
+
+        CheckJumpMultiplier();
         
         if(isGrounded && player.CurrentVelocity.y < 0.01f){
             stateMachine.ChangeState(player.LandState);
             Debug.Log("works");
+        }
+        else if(jumpInput && player.JumpState.CanJump()){
+            stateMachine.ChangeState(player.JumpState);
         }
         else{
             player.CheckIfShouldFlip(xInput);
@@ -40,11 +54,31 @@ public class PlayerInAirState : PlayerState
             player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);
             player.Anim.SetFloat("xVelocity", Mathf.Abs(player.CurrentVelocity.x));
         }
+    }
 
+    private void CheckJumpMultiplier(){
+        if(isJumping){
+            if(jumpInputStop){
+                player.SetVelocityY(player.CurrentVelocity.y * playerData.jumpHeightMultiplier);
+                isJumping = false;
+            }
+            else if(player.CurrentVelocity.y <= 0){
+                isJumping = false;
+            }
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
+
+    private void CheckCoyoteTime(){
+        if(coyoteTime && Time.time > startTime + playerData.coyoteTime){
+            coyoteTime = false;
+        }
+    }
+
+    public void StartCoyoteTime() => coyoteTime = true;
+    public void SetIsJumping() => isJumping = true;
 }
