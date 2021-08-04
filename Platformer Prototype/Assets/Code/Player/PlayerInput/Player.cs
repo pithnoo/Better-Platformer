@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public PlayerLandState LandState {get; private set;}
     public PlayerWallSlideState WallSlideState {get; private set;}
     public PlayerWallGrabState WallGrabState {get; private set;}
-
+    public PlayerWallClimbState WallClimbState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
     #endregion
@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
+        WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
     }
     private void Start() {
         Anim = GetComponent<Animator>();

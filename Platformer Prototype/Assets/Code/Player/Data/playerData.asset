@@ -19,7 +19,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  wallCheckDistance: 1
+  wallCheckDistance: 0.7
   coyoteTime: 0.1
   jumpHeightMultiplier: 0.5
   wallSlideVelocity: 1
+  wallClimbVelocity: 3
