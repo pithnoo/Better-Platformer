@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public PlayerWallGrabState WallGrabState {get; private set;}
     public PlayerWallClimbState WallClimbState {get; private set;}
     public PlayerWallJumpState WallJumpState {get; private set;}
+    public PlayerDashState DashState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
     #endregion
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
     }
 
     private void Start() {
@@ -78,6 +80,12 @@ public class Player : MonoBehaviour
     public void SetVelocity(float velocity, Vector2 angle, int direction){
         angle.Normalize();
         workspace.Set(angle.x * velocity * direction, angle.y * velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
+    }
+
+    public void SetDashVelocity(float velocity, Vector2 direction){
+        workspace = direction * velocity;
         RB.velocity = workspace;
         CurrentVelocity = workspace;
     }

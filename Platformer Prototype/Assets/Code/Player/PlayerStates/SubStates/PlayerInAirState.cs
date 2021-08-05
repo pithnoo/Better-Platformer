@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class PlayerInAirState : PlayerState
 {
-    private int xInput;
-    private bool isGrounded;
-    private bool coyoteTime;
-    private bool wallJumpCoyoteTime;
+    //Input
     private bool jumpInput;
     private bool jumpInputStop;
+    private int xInput;
+    private bool GrabInput;
+    private bool DashInput;
+
+
+    //Checks
+    private bool isGrounded;
     private bool isJumping;
+    private bool isTouchingWall;
+    private bool isTouchingWallBack;
     private bool oldIsTouchingWall;
     private bool oldIsTouchingWallBack;
-    private bool isTouchingWall;
-    private bool GrabInput;
-    private bool isTouchingWallBack;
-
+    
+    //Timers
+    private bool coyoteTime;
+    private bool wallJumpCoyoteTime;
     private float startWallJumpCoyoteTime;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -58,6 +64,7 @@ public class PlayerInAirState : PlayerState
         jumpInput = player.InputHandler.JumpInput;
         jumpInputStop = player.InputHandler.JumpInputStop;
         GrabInput = player.InputHandler.GrabInput;
+        DashInput = player.InputHandler.DashInput;
 
         CheckCoyoteTime();
         CheckJumpMultiplier();
@@ -81,6 +88,9 @@ public class PlayerInAirState : PlayerState
         }
         else if(isTouchingWall && xInput == player.FacingDirection && player.CurrentVelocity.y <= 0){
             stateMachine.ChangeState(player.WallSlideState);
+        }
+        else if(DashInput && player.DashState.CheckIfCanDash()){
+            stateMachine.ChangeState(player.DashState);
         }
         else{
             player.CheckIfShouldFlip(xInput);
