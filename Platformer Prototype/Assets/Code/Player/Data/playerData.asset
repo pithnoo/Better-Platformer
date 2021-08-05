@@ -22,5 +22,8 @@ MonoBehaviour:
   wallCheckDistance: 0.7
   coyoteTime: 0.1
   jumpHeightMultiplier: 0.5
-  wallSlideVelocity: 1
-  wallClimbVelocity: 3
+  wallSlideVelocity: 4
+  wallClimbVelocity: 5
+  wallJumpVelocity: 22
+  wallJumpTime: 0.05
+  wallJumpAngle: {x: 1, y: 2}

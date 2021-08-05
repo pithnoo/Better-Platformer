@@ -12,10 +12,14 @@ public class PlayerWallSlideState : PlayerTouchingWallState
     {
         base.LogicUpdate();
 
-        if(GrabInput && yInput == 0){
-            stateMachine.ChangeState(player.WallGrabState);
-        }
+        if(!isExitingState){
+            if(GrabInput && yInput == 0){
+                stateMachine.ChangeState(player.WallGrabState);
+            }
         
-        player.SetVelocityY(-playerData.wallSlideVelocity);
+            player.SetVelocityY(-playerData.wallSlideVelocity);
+        }
+
+        
     }
 }

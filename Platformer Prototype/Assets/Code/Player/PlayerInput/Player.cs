@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState WallSlideState {get; private set;}
     public PlayerWallGrabState WallGrabState {get; private set;}
     public PlayerWallClimbState WallClimbState {get; private set;}
+    public PlayerWallJumpState WallJumpState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
     #endregion
@@ -50,7 +51,9 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
+        WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
     }
+
     private void Start() {
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
@@ -72,6 +75,13 @@ public class Player : MonoBehaviour
     #endregion
     
     #region Set Functions
+    public void SetVelocity(float velocity, Vector2 angle, int direction){
+        angle.Normalize();
+        workspace.Set(angle.x * velocity * direction, angle.y * velocity);
+        RB.velocity = workspace;
+        CurrentVelocity = workspace;
+    }
+
     public void SetVelocityX(float velocity){
         workspace.Set(velocity, CurrentVelocity.y);
         RB.velocity = workspace;
@@ -98,6 +108,10 @@ public class Player : MonoBehaviour
 
     public bool CheckIfTouchingWall(){
         return Physics2D.Raycast(WallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingWallBack(){
+        return Physics2D.Raycast(WallCheck.position, Vector2.right * -FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
     #endregion
     
