@@ -6,10 +6,11 @@ public class PlayerDashState : PlayerAbilityState
 {
     public bool CanDash {get; private set;}
     private bool isHolding;
-    private bool DashInputStop;
+    //private bool DashInputStop;
 
     private Vector2 dashDirection;
     private Vector2 dashDirectionInput;
+    private Vector2 lastAfterImagePosition;
 
     private float lastDashTime;
 
@@ -41,22 +42,23 @@ public class PlayerDashState : PlayerAbilityState
             if(isHolding){
                 //determine dash direction
                 dashDirectionInput = player.InputHandler.DashDirectionInput;
-                DashInputStop = player.InputHandler.DashInputStop;
+                //DashInputStop = player.InputHandler.DashInputStop;
                 
                 if(dashDirectionInput != Vector2.zero){
                     dashDirection = dashDirectionInput;
                     dashDirection.Normalize();
                 }
 
-                if(DashInputStop || Time.time >= startTime + playerData.maxHoldTime){
-                    isHolding = false;
-                    startTime = Time.time;
-                    player.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x)); 
-                    player.RB.drag = playerData.drag;
-                    player.SetDashVelocity(playerData.dashVelocity, dashDirection);
-                }
+                isHolding = false;
+                startTime = Time.time;
+                player.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x)); 
+                player.RB.drag = playerData.drag;
+                player.SetDashVelocity(playerData.dashVelocity, dashDirection);
+                //PlaceAfterImage();
+                
             }
             else{
+                CheckIfShouldPlaceAfterImage();
                 player.SetDashVelocity(playerData.dashVelocity, dashDirection);
                 if(Time.time >= startTime + playerData.dashTime){
                     player.RB.drag = 0f;
@@ -76,4 +78,15 @@ public class PlayerDashState : PlayerAbilityState
     }
 
     public void ResetCanDash() => CanDash = true;
+
+    private void PlaceAfterImage(){
+        PlayerAfterImagePool.instance.GetFromPool();
+        lastAfterImagePosition = player.transform.position;
+    }
+
+    private void CheckIfShouldPlaceAfterImage(){
+        if(Vector2.Distance(player.transform.position, lastAfterImagePosition) >= playerData.distanceBetweenAfterImages){
+            PlaceAfterImage();
+        }
+    }
 }
