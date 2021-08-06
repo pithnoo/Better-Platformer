@@ -43,7 +43,6 @@ public class PlayerDashState : PlayerAbilityState
                 //determine dash direction
                 dashDirectionInput = player.InputHandler.DashDirectionInput;
                 //DashInputStop = player.InputHandler.DashInputStop;
-                
                 if(dashDirectionInput != Vector2.zero){
                     dashDirection = dashDirectionInput;
                     dashDirection.Normalize();

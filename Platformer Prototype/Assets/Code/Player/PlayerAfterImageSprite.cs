@@ -28,8 +28,10 @@ public class PlayerAfterImageSprite : MonoBehaviour
 
     private void Update(){
         alpha *= alphaMultiplier;
-        colour = new Color(1f,1f,1f, alpha);
+
+        colour = new Color(SR.color.r,SR.color.g,SR.color.b, alpha);
         SR.color = colour;
+
 
         if(Time.time >= (timeActivated + activeTime)){
             //add to pool

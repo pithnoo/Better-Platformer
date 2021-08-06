@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/BaseData")]
 public class PlayerData : ScriptableObject

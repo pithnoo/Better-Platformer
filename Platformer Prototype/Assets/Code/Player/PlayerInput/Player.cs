@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public Animator Anim {get; private set;}
     public PlayerInputHandler InputHandler {get; private set;}
     public Rigidbody2D RB {get; private set;}
+    public CinemachineImpulseSource source;
     #endregion
     
     #region Check Transforms
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
+        source = GetComponent<CinemachineImpulseSource>();
 
         StateMachine.Initialise(IdleState);
 
@@ -131,5 +134,7 @@ public class Player : MonoBehaviour
         FacingDirection *= -1;
         transform.Rotate(0f, 180f, 0f);
     }
+
+    public void DashShake() => source.GenerateImpulse();
     #endregion
 }

@@ -33,4 +33,4 @@ MonoBehaviour:
   dashVelocity: 60
   drag: 15
   dashEndYMultiplier: 0.1
-  distanceBetweenAfterImages: 0.5
+  distanceBetweenAfterImages: 0.25

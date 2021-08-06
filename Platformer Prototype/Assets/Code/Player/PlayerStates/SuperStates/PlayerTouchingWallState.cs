@@ -58,6 +58,7 @@ public class PlayerTouchingWallState : PlayerState
             stateMachine.ChangeState(player.InAirState);
         }
         else if(DashInput && player.DashState.CheckIfCanDash()){
+            player.DashShake();
             stateMachine.ChangeState(player.DashState);
         }
     }
