@@ -8,6 +8,7 @@ public class PlayerTouchingWallState : PlayerState
     protected bool isTouchingWall;
     protected bool GrabInput;
     protected bool JumpInput;
+    protected bool DashInput;
     protected int xInput;
     protected int yInput;
     public PlayerTouchingWallState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -44,6 +45,7 @@ public class PlayerTouchingWallState : PlayerState
         yInput = player.InputHandler.NormInputY;
         GrabInput = player.InputHandler.GrabInput;
         JumpInput = player.InputHandler.JumpInput;
+        DashInput = player.InputHandler.DashInput;
 
         if(JumpInput){
             player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
@@ -54,6 +56,10 @@ public class PlayerTouchingWallState : PlayerState
         }
         else if(!isTouchingWall || (xInput != player.FacingDirection && !GrabInput)){
             stateMachine.ChangeState(player.InAirState);
+        }
+        else if(DashInput && player.DashState.CheckIfCanDash()){
+            player.DashShake();
+            stateMachine.ChangeState(player.DashState);
         }
     }
     public override void PhysicsUpdate()

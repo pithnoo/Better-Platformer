@@ -90,6 +90,7 @@ public class PlayerInAirState : PlayerState
             stateMachine.ChangeState(player.WallSlideState);
         }
         else if(DashInput && player.DashState.CheckIfCanDash()){
+            player.DashShake();
             stateMachine.ChangeState(player.DashState);
         }
         else{

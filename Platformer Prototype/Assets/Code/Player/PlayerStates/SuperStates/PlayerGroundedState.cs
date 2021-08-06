@@ -53,6 +53,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.WallGrabState);
         }
         else if(DashInput && player.DashState.CheckIfCanDash()){
+            player.DashShake();
             stateMachine.ChangeState(player.DashState);
         }
 

@@ -8,6 +8,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
     {
         
     }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -16,7 +17,7 @@ public class PlayerWallSlideState : PlayerTouchingWallState
             if(GrabInput && yInput == 0){
                 stateMachine.ChangeState(player.WallGrabState);
             }
-        
+            
             player.SetVelocityY(-playerData.wallSlideVelocity);
         }
 
