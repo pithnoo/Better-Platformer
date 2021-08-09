@@ -41,4 +41,9 @@ public class PlayerData : ScriptableObject
     public float drag = 10f;
     public float dashEndYMultiplier = 0.2f;
     public float distanceBetweenAfterImages = 0.25f;
+
+    [Header("Charge State")]
+    public float soulHoldTime = 0.3f;
+    [Header("Soul State")]
+    public GameObject soulParticle;
 }

@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public PlayerWallClimbState WallClimbState {get; private set;}
     public PlayerWallJumpState WallJumpState {get; private set;}
     public PlayerDashState DashState {get; private set;}
+    public PlayerChargeState ChargeState {get; private set;}
+    public PlayerSoulState SoulState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
     #endregion
@@ -56,6 +58,8 @@ public class Player : MonoBehaviour
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
+        ChargeState = new PlayerChargeState(this, StateMachine, playerData, "charge");
+        SoulState = new PlayerSoulState(this, StateMachine, playerData, "soul");
     }
 
     private void Start() {
