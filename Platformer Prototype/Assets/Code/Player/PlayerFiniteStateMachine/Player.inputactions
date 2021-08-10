@@ -44,14 +44,6 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Soul",
-                    "type": "Button",
-                    "id": "c3ac7c8f-13df-4deb-9460-1851669d5ff8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -135,7 +127,7 @@
                 {
                     "name": "",
                     "id": "a07b772c-0b64-4e20-98a0-e50f91c3fea3",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -219,17 +211,6 @@
                     "action": "DashDirection",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "dc0d2233-70a5-4815-b580-a53b0c86efc6",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "Soul",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }

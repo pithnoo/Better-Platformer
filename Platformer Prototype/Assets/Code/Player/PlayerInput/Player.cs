@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     public PlayerWallClimbState WallClimbState {get; private set;}
     public PlayerWallJumpState WallJumpState {get; private set;}
     public PlayerDashState DashState {get; private set;}
-    public PlayerChargeState ChargeState {get; private set;}
     public PlayerSoulState SoulState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
@@ -43,6 +42,7 @@ public class Player : MonoBehaviour
     public Vector2 CurrentVelocity {get; private set;}
     public int FacingDirection {get; private set;}
     private Vector2 workspace;
+    public bool isDashing {get; private set;}
     #endregion
     
     #region Unity Callback Functions
@@ -58,7 +58,6 @@ public class Player : MonoBehaviour
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
-        ChargeState = new PlayerChargeState(this, StateMachine, playerData, "charge");
         SoulState = new PlayerSoulState(this, StateMachine, playerData, "soul");
     }
 
@@ -140,5 +139,12 @@ public class Player : MonoBehaviour
     }
 
     public void DashShake() => source.GenerateImpulse();
+
+    public void Damage(DamageDetails damageDetails){
+        //take damage
+    }
+
+    public void Dashing() => isDashing = true;
+    public void NotDashing() => isDashing = false;
     #endregion
 }

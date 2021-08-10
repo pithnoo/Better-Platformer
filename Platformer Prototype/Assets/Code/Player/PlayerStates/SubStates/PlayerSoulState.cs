@@ -12,7 +12,8 @@ public class PlayerSoulState : PlayerGroundedState
     {
         base.Enter();
         player.gameObject.SetActive(false);
-        //TODO: emit soul particle
+        GameObject.Instantiate(playerData.soulParticle, player.transform.position, player.transform.rotation);
+        //emit audio q
     }
 
 }

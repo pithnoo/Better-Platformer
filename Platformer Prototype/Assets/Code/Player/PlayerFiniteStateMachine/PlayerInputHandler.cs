@@ -17,7 +17,6 @@ public class PlayerInputHandler : MonoBehaviour
     public bool GrabInput {get; private set;}
     public bool DashInput {get; private set;}
     public bool DashInputStop {get; private set;}
-    public bool SoulInput {get; private set;}
 
     [SerializeField]
     private float inputHoldTime = 0.2f;
@@ -70,15 +69,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if(context.canceled){
             DashInputStop = true;
-        }
-    }
-
-    public void OnSoulInput(InputAction.CallbackContext context){
-        if(context.started){
-            SoulInput = true;
-        }
-        else if(context.canceled){
-            SoulInput = false;
         }
     }
 

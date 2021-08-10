@@ -10,7 +10,6 @@ public class PlayerGroundedState : PlayerState
     private bool isGrounded;
     private bool isTouchingWall;
     private bool DashInput;
-    private bool SoulInput;
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -42,7 +41,6 @@ public class PlayerGroundedState : PlayerState
         JumpInput = player.InputHandler.JumpInput;
         GrabInput = player.InputHandler.GrabInput;
         DashInput = player.InputHandler.DashInput;
-        SoulInput = player.InputHandler.SoulInput;
 
         if(JumpInput && player.JumpState.CanJump()){
             stateMachine.ChangeState(player.JumpState);
@@ -57,10 +55,6 @@ public class PlayerGroundedState : PlayerState
         else if(DashInput && player.DashState.CheckIfCanDash()){
             player.DashShake();
             stateMachine.ChangeState(player.DashState);
-        }
-        else if(SoulInput){
-            Debug.Log("Entered soul state");
-            stateMachine.ChangeState(player.ChargeState);
         }
 
     }
