@@ -46,4 +46,6 @@ public class PlayerData : ScriptableObject
     public float chargeCooldown = 0.5f;
     [Header("Soul State")]
     public GameObject soulParticle;
+    [Header("Other Variables")]
+    public float playerHealth;
 }
