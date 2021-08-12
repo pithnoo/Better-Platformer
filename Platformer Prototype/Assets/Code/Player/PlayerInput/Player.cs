@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     public Vector2 CurrentVelocity {get; private set;}
     public int FacingDirection {get; private set;}
     private Vector2 workspace;
-    public bool isDashing {get; private set;}
+    public bool isDashing;
     #endregion
     
     #region Unity Callback Functions
