@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private int damage;
+    private DamageDetails damageDetails;
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player"){
+            //Debug.Log(other);
+            damageDetails.damageAmount = damage;
+            other.transform.SendMessage("TakeDamage", damageDetails);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            Destroy(transform.parent.gameObject);
+            if(transform.parent.gameObject == null){
+                Destroy(gameObject);
+            }
+        }
     }
 }

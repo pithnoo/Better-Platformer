@@ -43,7 +43,9 @@ public class Player : MonoBehaviour
     public int FacingDirection {get; private set;}
     private Vector2 workspace;
     public bool isDashing;
+    public bool isInvincible;
     private bool onPlatform;
+    [SerializeField] private float currentHealth;
     #endregion
     
     #region Unity Callback Functions
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
 
         StateMachine.Initialise(IdleState);
 
+        currentHealth = playerData.playerHealth; //TODO: set to be shared later when player overall data is added
         FacingDirection = 1;
         onPlatform = false;
     }
@@ -108,6 +111,10 @@ public class Player : MonoBehaviour
         workspace.Set(CurrentVelocity.x, velocity);
         RB.velocity = workspace;
         CurrentVelocity = workspace;
+    }
+
+    public void TakeDamage(DamageDetails damageDetails){
+        currentHealth -= damageDetails.damageAmount;
     }
     #endregion
     
@@ -170,6 +177,12 @@ public class Player : MonoBehaviour
             transform.parent = null;
             onPlatform = false;
         }
+    }
+
+    private IEnumerator InvincibleTimer(){
+        isInvincible = true;
+        yield return new WaitForSeconds(0.5f);
+        isInvincible = false;
     }
     #endregion
 }

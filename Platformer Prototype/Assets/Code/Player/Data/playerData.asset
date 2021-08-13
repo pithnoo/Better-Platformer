@@ -28,9 +28,12 @@ MonoBehaviour:
   wallJumpTime: 0.05
   wallJumpAngle: {x: 1, y: 2}
   dashCooldown: 0.2
-  maxHoldTime: 0
   dashTime: 0.1
   dashVelocity: 60
   drag: 15
   dashEndYMultiplier: 0.1
   distanceBetweenAfterImages: 0.25
+  maxHoldTime: 0
+  chargeCooldown: 0.5
+  soulParticle: {fileID: 0}
+  playerHealth: 10
