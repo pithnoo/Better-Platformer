@@ -40,6 +40,7 @@ public class PlayerDashState : PlayerAbilityState
 
         if(!isExitingState){
             if(isHolding){
+                player.Dashing();
                 //determine dash direction
                 dashDirectionInput = player.InputHandler.DashDirectionInput;
                 //DashInputStop = player.InputHandler.DashInputStop;
@@ -61,7 +62,7 @@ public class PlayerDashState : PlayerAbilityState
                 player.SetDashVelocity(playerData.dashVelocity, dashDirection);
                 if(Time.time >= startTime + playerData.dashTime){
                     player.RB.drag = 0f;
-                    //Debug.Log("Changing");
+                    player.NotDashing();
                     isAbilityDone = true;
                     lastDashTime = Time.time;
                 }

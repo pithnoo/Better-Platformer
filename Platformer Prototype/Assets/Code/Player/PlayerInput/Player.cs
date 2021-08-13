@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public PlayerWallClimbState WallClimbState {get; private set;}
     public PlayerWallJumpState WallJumpState {get; private set;}
     public PlayerDashState DashState {get; private set;}
+    public PlayerSoulState SoulState {get; private set;}
     [SerializeField]
     private PlayerData playerData;
     #endregion
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour
     public Vector2 CurrentVelocity {get; private set;}
     public int FacingDirection {get; private set;}
     private Vector2 workspace;
+    public bool isDashing;
+    private bool onPlatform;
     #endregion
     
     #region Unity Callback Functions
@@ -56,6 +59,7 @@ public class Player : MonoBehaviour
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
+        SoulState = new PlayerSoulState(this, StateMachine, playerData, "soul");
     }
 
     private void Start() {
@@ -67,6 +71,7 @@ public class Player : MonoBehaviour
         StateMachine.Initialise(IdleState);
 
         FacingDirection = 1;
+        onPlatform = false;
     }
 
     private void Update() {
@@ -136,5 +141,35 @@ public class Player : MonoBehaviour
     }
 
     public void DashShake() => source.GenerateImpulse();
+
+    public void Damage(DamageDetails damageDetails){
+        //take damage
+    }
+
+    public void Dashing() => isDashing = true;
+    public void NotDashing() => isDashing = false;
+
+    public void PlatformCheck(){
+        if(onPlatform){
+            //invoke multiplier
+        }
+        else{
+            //undo multiplier
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "MovingPlatform"){
+            transform.parent = other.transform;
+            onPlatform = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        if(other.gameObject.tag == "MovingPlatform"){
+            transform.parent = null;
+            onPlatform = false;
+        }
+    }
     #endregion
 }
