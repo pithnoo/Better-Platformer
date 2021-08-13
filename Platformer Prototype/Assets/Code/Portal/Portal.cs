@@ -7,22 +7,16 @@ public class Portal : MonoBehaviour
 {
     #region variables
     [Header("Entities")]
-    public Player player;
-    public Soul soul;
     private LevelManager levelManager;
-    public GameObject portalParticle;
-    public GameObject soulToSpawn;
-    public GameObject playerToSpawn;
+    [SerializeField] private GameObject portalParticle, soulToSpawn, playerToSpawn;
 
     [Header("Checks")]
-    public float detectionRadius;
-    public LayerMask whatIsPlayer;
-    public LayerMask whatIsSoul;
-    public bool isWithPlayer;
-    public bool isWithSoul;
+    [SerializeField] private float detectionRadius;
+    [SerializeField] private LayerMask whatIsPlayer, whatIsSoul;
+    [SerializeField] private bool isWithPlayer, isWithSoul;
 
     [Header("Current Portal State")]
-    public PortalType state;
+    [SerializeField] private PortalType state;
 
     [Header("Cinemachine")]
     public CinemachineVirtualCamera virtualCamera;
