@@ -20,6 +20,7 @@ public class Portal : MonoBehaviour
 
     [Header("Cinemachine")]
     public CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineImpulseSource source;
     #endregion
 
     public enum PortalType{
@@ -78,7 +79,7 @@ public class Portal : MonoBehaviour
         isWithSoul = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsSoul);
 
         if(isWithSoul){
-            Debug.Log("Active");
+            //source.GenerateImpulse();
             Destroy(levelManager.soul.gameObject);
 
             Instantiate(portalParticle, transform.position, transform.rotation);
