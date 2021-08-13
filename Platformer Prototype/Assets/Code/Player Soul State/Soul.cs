@@ -12,11 +12,13 @@ public class Soul : MonoBehaviour
     [SerializeField] private float velocity;
     public float playerHealth;
     private Rigidbody2D rb;
+    private LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -34,5 +36,9 @@ public class Soul : MonoBehaviour
 
         // xRaw = (int)(MovementInput * Vector2.right).normalized.x;
         // yRaw = (int)(MovementInput * Vector2.up).normalized.y;
+    }
+
+    public void TakeDamage(DamageDetails damageDetails){
+        levelManager.DecreasePlayerHealth(damageDetails);
     }
 }

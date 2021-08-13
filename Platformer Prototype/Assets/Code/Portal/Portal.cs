@@ -72,6 +72,7 @@ public class Portal : MonoBehaviour
 
             levelManager.ResetSoulCheck();
             virtualCamera.m_Follow = levelManager.soul.transform;
+            levelManager.state = LevelManager.currentPlayerState.SOUL;
         }
     }
 
@@ -87,6 +88,7 @@ public class Portal : MonoBehaviour
 
             levelManager.ResetPlayerCheck();
             virtualCamera.m_Follow = levelManager.player.transform;
+            levelManager.state = LevelManager.currentPlayerState.PLAYER;
             //canSpawnPlayer = false;
         }
     }

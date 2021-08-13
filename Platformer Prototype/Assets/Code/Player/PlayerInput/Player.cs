@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     public bool isDashing;
     public bool isInvincible;
     private bool onPlatform;
+    private LevelManager levelManager;
     [SerializeField] private float currentHealth;
     #endregion
     
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
         source = GetComponent<CinemachineImpulseSource>();
+        levelManager = FindObjectOfType<LevelManager>();
 
         StateMachine.Initialise(IdleState);
 
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
-        currentHealth -= damageDetails.damageAmount;
+        levelManager.DecreasePlayerHealth(damageDetails);
     }
     #endregion
     
