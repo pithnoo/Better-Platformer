@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 10
   playerHealth: 0
+  source: {fileID: 8824587178017215799, guid: feae3be994d098c4c8eaef7e671d2908, type: 3}
 --- !u!50 &2206098533709165128
 Rigidbody2D:
   serializedVersion: 4

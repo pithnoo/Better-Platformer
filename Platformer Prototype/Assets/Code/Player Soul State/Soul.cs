@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Cinemachine;
 public class Soul : MonoBehaviour
 {
     private Vector2 MovementInput;
@@ -13,6 +13,7 @@ public class Soul : MonoBehaviour
     public float playerHealth;
     private Rigidbody2D rb;
     private LevelManager levelManager;
+    [SerializeField] private CinemachineImpulseSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class Soul : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
+        source.GenerateImpulse();
         levelManager.DecreasePlayerHealth(damageDetails);
     }
 }

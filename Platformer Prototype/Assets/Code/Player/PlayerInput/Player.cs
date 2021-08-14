@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
+        source.GenerateImpulse();
         levelManager.DecreasePlayerHealth(damageDetails);
     }
     #endregion

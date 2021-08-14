@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class LevelManager : MonoBehaviour
     public Soul soul;
     public currentPlayerState state;    
     [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth; //to be changed to only private later
+    [SerializeField] private int currentHealth; 
+    [SerializeField] private GameObject deathParticle;
 
     public enum currentPlayerState{
         PLAYER,
@@ -38,9 +40,11 @@ public class LevelManager : MonoBehaviour
         if(currentHealth <= 0){
             switch(state){
                 case currentPlayerState.PLAYER:
+                    Instantiate(deathParticle, player.transform.position, player.transform.rotation);
                     Destroy(player.gameObject);
                     break;
                 case currentPlayerState.SOUL:
+                    Instantiate(deathParticle, soul.transform.position, soul.transform.rotation);
                     Destroy(soul.gameObject);
                     break;
             }
