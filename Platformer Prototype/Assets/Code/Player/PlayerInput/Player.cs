@@ -46,7 +46,9 @@ public class Player : MonoBehaviour
     public bool isInvincible;
     private bool onPlatform;
     private LevelManager levelManager;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private Color hurtColour;
+    private SpriteRenderer spriteRenderer;
+    
     #endregion
     
     #region Unity Callback Functions
@@ -71,10 +73,10 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         source = GetComponent<CinemachineImpulseSource>();
         levelManager = FindObjectOfType<LevelManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         StateMachine.Initialise(IdleState);
 
-        currentHealth = playerData.playerHealth; //TODO: set to be shared later when player overall data is added
         FacingDirection = 1;
         onPlatform = false;
     }
@@ -116,8 +118,12 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
-        source.GenerateImpulse();
-        levelManager.DecreasePlayerHealth(damageDetails);
+        if(!isInvincible){
+            StartCoroutine("HitFlash");
+            source.GenerateImpulse();
+            levelManager.DecreasePlayerHealth(damageDetails);
+            StartCoroutine("InvincibleTimer");      
+        }
     }
     #endregion
     
@@ -184,8 +190,16 @@ public class Player : MonoBehaviour
 
     private IEnumerator InvincibleTimer(){
         isInvincible = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         isInvincible = false;
+    }
+
+    private IEnumerator HitFlash(){
+        while(isInvincible){
+            spriteRenderer.color = hurtColour;
+            yield return new WaitForSeconds(0.5f);
+            spriteRenderer.color = Color.white;
+        }
     }
     #endregion
 }

@@ -14,12 +14,14 @@ public class Soul : MonoBehaviour
     private Rigidbody2D rb;
     private LevelManager levelManager;
     [SerializeField] private CinemachineImpulseSource source;
+    private bool isInvincible;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         levelManager = FindObjectOfType<LevelManager>();
+        isInvincible = false;
     }
 
     // Update is called once per frame
@@ -40,7 +42,15 @@ public class Soul : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
-        source.GenerateImpulse();
-        levelManager.DecreasePlayerHealth(damageDetails);
+        if(!isInvincible){
+            source.GenerateImpulse();
+            StartCoroutine("InvincibleTimer");
+            levelManager.DecreasePlayerHealth(damageDetails);
+        }
+    }
+    private IEnumerator InvincibleTimer(){
+        isInvincible = true;
+        yield return new WaitForSeconds(1f);
+        isInvincible = false;
     }
 }
