@@ -195,11 +195,9 @@ public class Player : MonoBehaviour
     }
 
     private IEnumerator HitFlash(){
-        while(isInvincible){
-            spriteRenderer.color = hurtColour;
-            yield return new WaitForSeconds(0.5f);
-            spriteRenderer.color = Color.white;
-        }
+        spriteRenderer.color = hurtColour;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
     }
     #endregion
 }
