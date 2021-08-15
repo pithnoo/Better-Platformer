@@ -233,6 +233,6 @@ MonoBehaviour:
   objectToMove: {fileID: 623569199602375512}
   startPoint: {fileID: 623569200062445389}
   endPoint: {fileID: 623569200011275148}
-  moveSpeed: 5
+  moveSpeed: 10
   currentTarget: {x: 0, y: 0, z: 0}
   canMove: 0
