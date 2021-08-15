@@ -14,13 +14,12 @@ public class RotatingObject : MonoBehaviour
 
     void Start()
     {
-        centre = target.transform.position;
         angle = AngleRange;
     }
 
     void FixedUpdate()
     {
-        //place centre here so that position updates (optional for enemy)
+        centre = target.transform.position;
         angle += RotateSpeed * Time.deltaTime;
 
         var offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * Radius;

@@ -23,7 +23,7 @@ public class StraightMovingObject : MonoBehaviour
     void FixedUpdate()
     {
         if(canMove){
-            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
+            objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.fixedDeltaTime);
 
             if (objectToMove.transform.position == endPoint.position)
             {
