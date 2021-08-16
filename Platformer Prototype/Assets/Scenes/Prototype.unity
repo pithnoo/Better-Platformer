@@ -659,7 +659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.5, y: 22.64, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2404,7 +2404,7 @@ GameObject:
   m_Layer: 0
   m_Name: ProjectileLauncher
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2420,8 +2420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f025c9864fc07b498c1362c487273ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 3
+  state: 1
   projectileSpeed: 10
+  fireRate: 1.5
 --- !u!114 &2055645396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2445,7 +2446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055645394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70, y: 20.1, z: 0}
+  m_LocalPosition: {x: 94.5, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2525,7 +2526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117579910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.5, y: 27.8, z: -12}
+  m_LocalPosition: {x: 0, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 194458515}
@@ -2625,11 +2626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.z

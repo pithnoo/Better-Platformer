@@ -17,7 +17,7 @@ public class HurtPlayer : MonoBehaviour
                 other.transform.SendMessage("TakeDamage", damageDetails);
                 if (isProjectile)
                 {
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
             }
         }

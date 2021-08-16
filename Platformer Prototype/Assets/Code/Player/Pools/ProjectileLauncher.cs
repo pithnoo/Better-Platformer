@@ -6,22 +6,28 @@ public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] private direction state;
     [SerializeField] private float projectileSpeed;
+    [SerializeField] private float fireRate;
+    private float nextTimeToFire;
     public enum direction{
         UP,
         DOWN,
         LEFT,
         RIGHT
     }
-    void Start()
-    {
-        //objectPool = GetComponent<ObjectPool>();
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if(Time.time >= nextTimeToFire){
+            Debug.Log("active");
+            nextTimeToFire = Time.time + 1f/fireRate;
+            ShootProjectile();
+        }
+    }
+
+    void ShootProjectile(){
         GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
-        if(projectile == null){
+        if(projectile != null){
             projectile.transform.position = transform.position;
             projectile.transform.rotation = transform.rotation;
             projectile.SetActive(true);
