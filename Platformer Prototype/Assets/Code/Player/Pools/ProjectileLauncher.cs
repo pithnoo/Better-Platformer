@@ -19,14 +19,13 @@ public class ProjectileLauncher : MonoBehaviour
     void Update()
     {
         if(Time.time >= nextTimeToFire){
-            Debug.Log("active");
             nextTimeToFire = Time.time + 1f/fireRate;
             ShootProjectile();
         }
     }
 
     void ShootProjectile(){
-        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject();
+        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject("ProjectilePillar");
         if(projectile != null){
             projectile.transform.position = transform.position;
             projectile.transform.rotation = transform.rotation;

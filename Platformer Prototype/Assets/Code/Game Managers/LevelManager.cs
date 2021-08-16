@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public Soul soul;
     public currentPlayerState state;    
     public bool isInvincible;
+    public float invincibleTimer;
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth; 
     [SerializeField] private GameObject deathParticle;
@@ -58,7 +59,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator InvincibleTimer(){
         isInvincible = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(invincibleTimer);
         isInvincible = false;
     }
 
