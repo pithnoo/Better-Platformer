@@ -4,5 +4,5 @@ using UnityEngine;
 
 public struct DamageDetails
 {
-    public float damageAmount;
+    public int damageAmount;
 }

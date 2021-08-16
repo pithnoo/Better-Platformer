@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2500830472965036014}
   - component: {fileID: 8824587178017215799}
   m_Layer: 0
-  m_Name: DashShake
+  m_Name: Shake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: b70b511fd39783d1ea599f9bd5d6ff0e, type: 2}
-    m_AmplitudeGain: 1
+    m_AmplitudeGain: 2
     m_FrequencyGain: 10
     m_RepeatMode: 0
     m_Randomize: 0

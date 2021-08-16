@@ -238,6 +238,9 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 4f520b279fca2ff49aebe3fb8011ab37, type: 2}
   GroundCheck: {fileID: 733453080792789036}
   WallCheck: {fileID: 733453080482363314}
+  isDashing: 0
+  isInvincible: 0
+  hurtColour: {r: 0, g: 0, b: 0, a: 1}
 --- !u!212 &733453081232784557
 SpriteRenderer:
   m_ObjectHideFlags: 0

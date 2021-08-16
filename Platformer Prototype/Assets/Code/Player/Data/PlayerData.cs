@@ -47,5 +47,5 @@ public class PlayerData : ScriptableObject
     [Header("Soul State")]
     public GameObject soulParticle;
     [Header("Other Variables")]
-    public float playerHealth;
+    public int playerHealth;
 }

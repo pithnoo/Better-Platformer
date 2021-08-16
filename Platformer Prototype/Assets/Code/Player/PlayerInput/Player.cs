@@ -43,7 +43,12 @@ public class Player : MonoBehaviour
     public int FacingDirection {get; private set;}
     private Vector2 workspace;
     public bool isDashing;
+    public bool isInvincible;
     private bool onPlatform;
+    private LevelManager levelManager;
+    [SerializeField] private Color hurtColour;
+    private SpriteRenderer spriteRenderer;
+    
     #endregion
     
     #region Unity Callback Functions
@@ -67,6 +72,8 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
         source = GetComponent<CinemachineImpulseSource>();
+        levelManager = FindObjectOfType<LevelManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         StateMachine.Initialise(IdleState);
 
@@ -108,6 +115,15 @@ public class Player : MonoBehaviour
         workspace.Set(CurrentVelocity.x, velocity);
         RB.velocity = workspace;
         CurrentVelocity = workspace;
+    }
+
+    public void TakeDamage(DamageDetails damageDetails){
+        if(!isInvincible){
+            StartCoroutine("HitFlash");
+            source.GenerateImpulse();
+            levelManager.DecreasePlayerHealth(damageDetails);
+            StartCoroutine("InvincibleTimer");      
+        }
     }
     #endregion
     
@@ -170,6 +186,18 @@ public class Player : MonoBehaviour
             transform.parent = null;
             onPlatform = false;
         }
+    }
+
+    private IEnumerator InvincibleTimer(){
+        isInvincible = true;
+        yield return new WaitForSeconds(1f);
+        isInvincible = false;
+    }
+
+    private IEnumerator HitFlash(){
+        spriteRenderer.color = hurtColour;
+        yield return new WaitForSeconds(0.05f);
+        spriteRenderer.color = Color.white;
     }
     #endregion
 }
