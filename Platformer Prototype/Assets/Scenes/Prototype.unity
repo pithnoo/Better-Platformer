@@ -2123,10 +2123,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 45646808229034725, guid: bfbdc5ad88aaa1648961cd93becf0131, type: 3}
-      propertyPath: m_PixelSnapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 45646808229034725, guid: bfbdc5ad88aaa1648961cd93becf0131, type: 3}
       propertyPath: m_RefResolutionX
       value: 320
       objectReference: {fileID: 0}

@@ -145,9 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171c1ae23f25fe0499c98d45957bad5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
+  velocity: 12
   playerHealth: 0
   source: {fileID: 7679229315487433843}
+  isInvincible: 0
   hurtColour: {r: 0, g: 0, b: 0, a: 1}
 --- !u!50 &2206098533709165128
 Rigidbody2D:

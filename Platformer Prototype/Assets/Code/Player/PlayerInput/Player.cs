@@ -118,12 +118,9 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(DamageDetails damageDetails){
-        if(!isInvincible){
-            StartCoroutine("HitFlash");
-            source.GenerateImpulse();
-            levelManager.DecreasePlayerHealth(damageDetails);
-            StartCoroutine("InvincibleTimer");      
-        }
+        StartCoroutine("HitFlash");
+        source.GenerateImpulse();
+        levelManager.DecreasePlayerHealth(damageDetails);
     }
     #endregion
     
@@ -186,12 +183,6 @@ public class Player : MonoBehaviour
             transform.parent = null;
             onPlatform = false;
         }
-    }
-
-    private IEnumerator InvincibleTimer(){
-        isInvincible = true;
-        yield return new WaitForSeconds(1f);
-        isInvincible = false;
     }
 
     private IEnumerator HitFlash(){

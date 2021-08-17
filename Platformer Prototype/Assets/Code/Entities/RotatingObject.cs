@@ -21,7 +21,6 @@ public class RotatingObject : MonoBehaviour
     {
         centre = target.transform.position;
         angle += RotateSpeed * Time.deltaTime;
-
         var offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * Radius;
         transform.position = centre + offset;
     }
