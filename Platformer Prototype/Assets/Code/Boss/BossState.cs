@@ -6,12 +6,14 @@ public class BossState
 {
     protected BossStateMachine stateMachine;
     protected Boss boss;
+    protected BossData bossData;
     protected float startTime;
     protected string animBoolName;
 
-    public BossState(Boss boss, BossStateMachine stateMachine, string animBoolName){
+    public BossState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName){
         this.boss = boss;
         this.stateMachine = stateMachine;
+        this.bossData = bossData;
         this.animBoolName = animBoolName;
     }
 

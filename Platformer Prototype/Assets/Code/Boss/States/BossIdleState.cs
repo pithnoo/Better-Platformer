@@ -2,17 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossIdleState : MonoBehaviour
+public class BossIdleState : BossState
 {
-    // Start is called before the first frame update
-    void Start()
+    public BossIdleState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void DoChecks()
     {
-        
+        base.DoChecks();
+    }
+    public override void Enter()
+    {
+        base.Enter();
+        boss.ReturnToCentre();
+    }
+    public override void Exit()
+    {
+        base.Exit();
+    }
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+    }
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+        boss.BossFlight();
+        boss.lookTowardsPlayer();
     }
 }
