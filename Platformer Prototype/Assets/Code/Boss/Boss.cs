@@ -108,7 +108,10 @@ public class Boss : MonoBehaviour
     }
     private void LookTowardsPlayer(){
         //Debug.Log(player.transform.position.x);
-        if(player.transform.position.x > transform.position.x){
+        if(player == null){
+            return;
+        }
+        else if(player.transform.position.x > transform.position.x){
             transform.localScale = new Vector3(1,1,1);
         }
         else if(player.transform.position.x < transform.position.x){
@@ -117,7 +120,10 @@ public class Boss : MonoBehaviour
     }
 
     private void LookTowardsSoul(){
-        if(soul.transform.position.x > transform.position.x){
+        if(soul == null){
+            return;
+        }
+        else if(soul.transform.position.x > transform.position.x){
             transform.localScale = new Vector3(1,1,1);
         }
         else if(soul.transform.position.x < transform.position.x){

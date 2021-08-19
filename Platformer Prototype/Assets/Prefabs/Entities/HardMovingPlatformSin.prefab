@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2188134052049074633}
   - component: {fileID: 7438069660569521779}
   - component: {fileID: 3110025462281189710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2188134052143071813}
   - component: {fileID: 1002008333973341615}
   - component: {fileID: 1958005075400124793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 2188134052590192788}
   - component: {fileID: 8938941842574173892}
   - component: {fileID: 7323768399567927704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 2188134052914988483}
   - component: {fileID: 3217978966743449762}
   - component: {fileID: 5751451032944541347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7576714499027644227}
   - component: {fileID: 8886523564222428986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HardMovingPlatformSin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

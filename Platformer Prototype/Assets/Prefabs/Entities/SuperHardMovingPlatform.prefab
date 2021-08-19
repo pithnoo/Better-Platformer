@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 40828356461451138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40828356933013573}
   - component: {fileID: 40828356933013570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SuperHardMovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,7 @@ MonoBehaviour:
   moveSpeed: 5
   currentTarget: {x: 0, y: 0, z: 0}
   canMove: 0
+  reachedPoint: 0
 --- !u!1 &40828357450217995
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 40828357450217994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -268,7 +269,7 @@ GameObject:
   - component: {fileID: 8640499819681792353}
   - component: {fileID: 7611663761013807667}
   - component: {fileID: 1574030157612556476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +410,7 @@ GameObject:
   - component: {fileID: 8640499819907566878}
   - component: {fileID: 3662514220146281208}
   - component: {fileID: 9043820361775276207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +551,7 @@ GameObject:
   - component: {fileID: 8640499820295304166}
   - component: {fileID: 74662470217614262}
   - component: {fileID: 8605370713307425660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +692,7 @@ GameObject:
   - component: {fileID: 8640499820547229391}
   - component: {fileID: 1048701475657757045}
   - component: {fileID: 4800255780729767496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +833,7 @@ GameObject:
   - component: {fileID: 8640499820570868427}
   - component: {fileID: 2467585073526436921}
   - component: {fileID: 8328799007975983700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +974,7 @@ GameObject:
   - component: {fileID: 8640499820776040593}
   - component: {fileID: 1146292287256085243}
   - component: {fileID: 8696365975897837669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1115,7 @@ GameObject:
   - component: {fileID: 8640499820842845529}
   - component: {fileID: 2557103984711089157}
   - component: {fileID: 1690579114899209119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1256,7 @@ GameObject:
   - component: {fileID: 8640499820893961539}
   - component: {fileID: 7229176631996136105}
   - component: {fileID: 8257582605016995455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1397,7 @@ GameObject:
   - component: {fileID: 8640499821079852946}
   - component: {fileID: 1565397398037666242}
   - component: {fileID: 871349854518068894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1538,7 @@ GameObject:
   - component: {fileID: 8640499821295561756}
   - component: {fileID: 6869568296467640995}
   - component: {fileID: 3273879595280127860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1679,7 @@ GameObject:
   - component: {fileID: 8640499821665745605}
   - component: {fileID: 4979967777985363876}
   - component: {fileID: 2766805154445328805}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1820,7 @@ GameObject:
   - component: {fileID: 8640499821789554331}
   - component: {fileID: 5891711457819660019}
   - component: {fileID: 5541632430287769941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

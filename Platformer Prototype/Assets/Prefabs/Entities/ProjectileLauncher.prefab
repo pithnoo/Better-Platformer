@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  projectileSpeed: 10
-  fireRate: 2
+  projectileSpeed: 5
+  fireRate: 1

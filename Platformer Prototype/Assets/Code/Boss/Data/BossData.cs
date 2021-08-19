@@ -26,8 +26,9 @@ public class BossData : ScriptableObject
     public int numberOfProjectiles = 8;
     public float burstRadius = 0.25f;
     public float burstProjectileSpeed = 3f;
-    
-    public List<Transform> spikeAttackPositions;
+
+    public List<Transform> topSpikePositions;
+    public List<Transform> bottomSpikePositions;
 
     [Header("Lazer attack positions")]
     public Transform lazer1, lazer2;

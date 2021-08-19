@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1015051226751500205}
   - component: {fileID: 3622087930456592557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EasyMovingPlatformSin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 8749960074386986285}
   - component: {fileID: 5448023860000378956}
   - component: {fileID: 2946066889244585549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 8749960075144321146}
   - component: {fileID: 1963088096971109930}
   - component: {fileID: 184799908173900150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

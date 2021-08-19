@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 164022516497097768}
   - component: {fileID: 3509402650443161929}
   - component: {fileID: 6037686569222070088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 164022516732011438}
   - component: {fileID: 1296104902721856580}
   - component: {fileID: 519975481818499218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 164022517110253951}
   - component: {fileID: 6923978699173054255}
   - component: {fileID: 8770805635994130547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 164022517642860578}
   - component: {fileID: 8872721550135914392}
   - component: {fileID: 3977362787296221349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8448344425135531239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -734,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8448344425623062895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StartPoint
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8448344425684176552}
   - component: {fileID: 4805424539462824788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HardMovingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,3 +811,4 @@ MonoBehaviour:
   moveSpeed: 5
   currentTarget: {x: 0, y: 0, z: 0}
   canMove: 0
+  reachedPoint: 0
