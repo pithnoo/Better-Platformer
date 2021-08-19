@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossAttackState : BossState
+public class DiskAttack : BossAttackState
 {
-    protected bool isAnimationFinished;
-
-    public BossAttackState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+    public DiskAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
     {
     }
 
@@ -14,28 +12,34 @@ public class BossAttackState : BossState
     {
         base.DoChecks();
     }
+
     public override void Enter()
     {
         base.Enter();
-        isAnimationFinished = false;
     }
+
     public override void Exit()
     {
         base.Exit();
     }
+
+    public override void FinishAttack()
+    {
+        base.FinishAttack();
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
     }
+
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
-    public virtual void TriggerAttack(){
 
-    }
-
-    public virtual void FinishAttack(){
-        isAnimationFinished = true;
+    public override void TriggerAttack()
+    {
+        base.TriggerAttack();
     }
 }

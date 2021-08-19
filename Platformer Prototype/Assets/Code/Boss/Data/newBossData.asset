@@ -17,9 +17,19 @@ MonoBehaviour:
     m_Bits: 128
   maxHealth: 8
   collisionDamage: 1
+  maxAttacks: 4
   xScaleFlight: 10
   yScaleFlight: 1.5
+  minIdleTime: 1
+  maxIdleTime: 2
   flightSpeed: 4
   playerToSpawn: {fileID: 733453081232784544, guid: e8af491b35905944fb346a87416483ea, type: 3}
   soulToSpawn: {fileID: 2206098533709165171, guid: 0426534cfc3c8d54bbd2e07918d5bd6a, type: 3}
   portalParticle: {fileID: 7487225274396795923, guid: 0ced671d767cf924f89374c8954ba695, type: 3}
+  spikeAttackPositions: []
+  lazer1: {fileID: 0}
+  lazer2: {fileID: 0}
+  vertical1: {fileID: 0}
+  vertical2: {fileID: 0}
+  horizontal1: {fileID: 0}
+  horizontal2: {fileID: 0}

@@ -11,6 +11,7 @@ public class StraightMovingObject : MonoBehaviour
     [SerializeField] private Vector3 currentTarget;
 
     public bool canMove;
+    public bool reachedPoint;
 
     // Start is called before the first frame update
     void Start()
