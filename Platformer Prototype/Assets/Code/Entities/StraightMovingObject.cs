@@ -11,13 +11,21 @@ public class StraightMovingObject : MonoBehaviour
     [SerializeField] private Vector3 currentTarget;
 
     public bool canMove;
+    public float delay;
     public bool reachedPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTarget = endPoint.position;
-        canMove = true;
+        canMove = false;
+    }
+
+    void Update() {
+        delay -= Time.deltaTime;
+        if(delay <= 0f){
+            canMove = true;
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +37,7 @@ public class StraightMovingObject : MonoBehaviour
             if (objectToMove.transform.position == endPoint.position)
             {
                 currentTarget = startPoint.position;
+                reachedPoint = true;
             }
             if (objectToMove.transform.position == startPoint.position)
             {

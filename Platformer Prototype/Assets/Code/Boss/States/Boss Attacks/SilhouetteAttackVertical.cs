@@ -5,7 +5,8 @@ using UnityEngine;
 public class SilhouetteAttackVertical : BossAttackState
 {
     private int randomStart;
-    public SilhouetteAttackVertical(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+
+    public SilhouetteAttackVertical(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
 

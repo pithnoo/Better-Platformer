@@ -5,9 +5,11 @@ using UnityEngine;
 public class BossAttackState : BossState
 {
     protected bool isAnimationFinished;
+    protected Transform attackPosition;
 
-    public BossAttackState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+    public BossAttackState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName)
     {
+        this.attackPosition = attackPosition;
     }
 
     public override void DoChecks()

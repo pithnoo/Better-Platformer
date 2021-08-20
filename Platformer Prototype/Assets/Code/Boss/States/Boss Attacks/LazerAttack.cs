@@ -5,7 +5,8 @@ using UnityEngine;
 public class LazerAttack : BossAttackState
 {
     private int stage;
-    public LazerAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+
+    public LazerAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
 

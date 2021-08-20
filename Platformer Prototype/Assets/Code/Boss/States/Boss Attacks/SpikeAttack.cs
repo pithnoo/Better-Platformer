@@ -5,9 +5,10 @@ using UnityEngine;
 public class SpikeAttack : BossAttackState
 {
     private int stage;
-    public SpikeAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+    public SpikeAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
+
     public override void DoChecks()
     {
         base.DoChecks();

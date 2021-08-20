@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiskAttack : BossAttackState
 {
-    public DiskAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+    public DiskAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
 
@@ -41,5 +41,6 @@ public class DiskAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        boss.SpawnGameObject("Disk", attackPosition);
     }
 }

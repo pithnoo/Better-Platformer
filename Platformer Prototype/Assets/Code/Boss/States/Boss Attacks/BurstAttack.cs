@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BurstAttack : BossAttackState
 {
-    public BurstAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
+    public BurstAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
+
     public override void DoChecks()
     {
         base.DoChecks();

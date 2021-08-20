@@ -22,9 +22,11 @@ public class Boss : MonoBehaviour
     private bool isInvincible;
     private DamageDetails damageDetails;
     [SerializeField] private Transform playerCheck;
+    [SerializeField] private Transform attackPosition;
     [SerializeField] private Transform originalPoint;
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
+    private SpriteRenderer SR;
 
     public enum bossAttackType{
         SOUL,
@@ -51,16 +53,30 @@ public class Boss : MonoBehaviour
 
     #endregion
 
+    #region Attack Positions
+    [Header("Spike attack positions")]
+    public List<Transform> topSpikePositions;
+    public List<Transform> bottomSpikePositions;
+
+    [Header("Lazer attack positions")]
+    public Transform lazer1, lazer2;
+
+    [Header("Silhouette positions")]
+    public Transform vertical1;
+    public Transform vertical2;
+    public Transform horizontal1, horizontal2;
+    #endregion
+
     #region Unity Callback Functions
     private void Awake() {
         stateMachine = new BossStateMachine();
         bossIdleState = new BossIdleState(this, stateMachine, bossData, "idle");
-        burstAttack = new BurstAttack(this, stateMachine, bossData, "burst");
-        diskAttack = new DiskAttack(this, stateMachine, bossData, "disk");
-        lazerAttack = new LazerAttack(this, stateMachine, bossData, "lazer");
-        spikeAttack = new SpikeAttack(this, stateMachine, bossData, "spike");
-        silhouetteAttackHorizontal = new SilhouetteAttackHorizontal(this, stateMachine, bossData, "sHorizontal");
-        silhouetteAttackVertical = new SilhouetteAttackVertical(this, stateMachine, bossData, "sVertical");
+        burstAttack = new BurstAttack(this, stateMachine, bossData, "burst", attackPosition);
+        diskAttack = new DiskAttack(this, stateMachine, bossData, "disk", attackPosition);
+        lazerAttack = new LazerAttack(this, stateMachine, bossData, "lazer", attackPosition);
+        spikeAttack = new SpikeAttack(this, stateMachine, bossData, "spike", attackPosition);
+        silhouetteAttackHorizontal = new SilhouetteAttackHorizontal(this, stateMachine, bossData, "sHorizontal", attackPosition);
+        silhouetteAttackVertical = new SilhouetteAttackVertical(this, stateMachine, bossData, "sVertical", attackPosition);
     }
 
     private void Start(){
@@ -69,6 +85,7 @@ public class Boss : MonoBehaviour
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
         portal = aliveGO.GetComponent<Portal>();
+        SR = aliveGO.GetComponent<SpriteRenderer>();
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
 
@@ -131,7 +148,7 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ReturnToCentre() => transform.position = originalPoint.position;
+    public void ReturnToCentre() => transform.position = Vector2.MoveTowards(transform.position, originalPoint.position, bossData.flightSpeed * Time.deltaTime);
     public void BossFlight() => transform.position = originalPoint.position + (Vector3.right * Mathf.Sin(Time.time/2*bossData.flightSpeed)*bossData.xScaleFlight - Vector3.up * Mathf.Sin(Time.time * bossData.flightSpeed)*bossData.yScaleFlight);
     #endregion
     
@@ -173,6 +190,7 @@ public class Boss : MonoBehaviour
 
     private void spawnSoul(){
         if(levelManager.player.isDashing){
+            levelManager.currentHealth++;
             levelManager.player.isDashing = false;
             Destroy(levelManager.player.gameObject);
 
@@ -191,6 +209,7 @@ public class Boss : MonoBehaviour
 
     private void spawnPlayer(){
         //source.GenerateImpulse();
+        levelManager.currentHealth++;
         Destroy(levelManager.soul.gameObject);
 
         Instantiate(bossData.portalParticle, transform.position, transform.rotation);
@@ -208,5 +227,7 @@ public class Boss : MonoBehaviour
 
     private void ResetPlayerCheck() => player = FindObjectOfType<Player>();
     private void ResetSoulCheck() => soul = FindObjectOfType<Soul>();
+    public void bossVanish() => SR.enabled = false;
+    public void bossReturn() => SR.enabled = true;
     #endregion
 }

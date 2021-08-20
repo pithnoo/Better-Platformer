@@ -21,20 +21,10 @@ public class BossData : ScriptableObject
     [Header("Entities to spawn")]
     public GameObject playerToSpawn, soulToSpawn, portalParticle;
     public GameObject projectile;
+    public GameObject spikeParticle, silhouetteParticle, diskParticle;
 
     [Header("Burst Attack")]
     public int numberOfProjectiles = 8;
     public float burstRadius = 0.25f;
     public float burstProjectileSpeed = 3f;
-
-    public List<Transform> topSpikePositions;
-    public List<Transform> bottomSpikePositions;
-
-    [Header("Lazer attack positions")]
-    public Transform lazer1, lazer2;
-
-    [Header("Silhouette positions")]
-    public Transform vertical1;
-    public Transform vertical2;
-    public Transform horizontal1, horizontal2;
 }

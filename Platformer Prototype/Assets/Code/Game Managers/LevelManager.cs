@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     public bool isInvincible;
     public float invincibleTimer;
     [SerializeField] private int maxHealth;
-    [SerializeField] private int currentHealth; 
+    public int currentHealth; 
     [SerializeField] private GameObject deathParticle;
 
     public enum currentPlayerState{
