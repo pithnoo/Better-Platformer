@@ -7,6 +7,10 @@ TagManager:
   - MovingPlatform
   - ProjectilePillar
   - Disk
+  - Lazer1
+  - Lazer2
+  - ReverseLazer1
+  - ReverseLazer2
   layers:
   - Default
   - TransparentFX
