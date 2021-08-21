@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 632954825929271941}
   - component: {fileID: 1546753674065919209}
   - component: {fileID: 5518881089666821129}
-  - component: {fileID: 8615164186122944962}
   - component: {fileID: 6299950179333293007}
   m_Layer: 0
   m_Name: VertialSilhouette (3)
@@ -111,27 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &8615164186122944962
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686768093889481}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &6299950179333293007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +135,6 @@ GameObject:
   - component: {fileID: 6339092303131212100}
   - component: {fileID: 8610908892463370054}
   - component: {fileID: 8121731310265642643}
-  - component: {fileID: 8807491804651371807}
   - component: {fileID: 2009594055821811580}
   m_Layer: 0
   m_Name: VertialSilhouette (1)
@@ -257,27 +234,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &8807491804651371807
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116265732268494499}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &2009594055821811580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,7 +259,6 @@ GameObject:
   - component: {fileID: 7960019739436613667}
   - component: {fileID: 1962254609967807754}
   - component: {fileID: 718988378114028442}
-  - component: {fileID: 1893058713673021489}
   - component: {fileID: 2067599099642721346}
   m_Layer: 0
   m_Name: VertialSilhouette
@@ -403,27 +358,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1893058713673021489
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592613706755661846}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &2067599099642721346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,9 +381,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8759550420674807372}
+  - component: {fileID: 3171946045185461955}
   m_Layer: 0
   m_Name: VerticalHolder
-  m_TagString: Untagged
+  m_TagString: sVertical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4360020260032160150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.808896, y: -1.2241006, z: -5.8819056}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7960019739436613667}
@@ -472,6 +407,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &3171946045185461955
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360020260032160150}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6238722251039685469
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +439,6 @@ GameObject:
   - component: {fileID: 5689985740230541439}
   - component: {fileID: 3656279172675318480}
   - component: {fileID: 6874934079494612660}
-  - component: {fileID: 1249194828413753051}
   - component: {fileID: 7550597870378152489}
   m_Layer: 0
   m_Name: VertialSilhouette (2)
@@ -583,27 +538,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1249194828413753051
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6238722251039685469}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7550597870378152489
 MonoBehaviour:
   m_ObjectHideFlags: 0

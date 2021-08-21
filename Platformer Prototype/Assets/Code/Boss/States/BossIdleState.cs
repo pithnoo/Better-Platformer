@@ -19,6 +19,11 @@ public class BossIdleState : BossState
     public override void Enter()
     {
         base.Enter();
+        if(boss.currentHealth <= (bossData.maxHealth / 2)){
+            boss.secondPhase = true;
+            boss.bossTrail.gameObject.SetActive(true);
+        }
+
 
         SetRandomIdleTime();
         boss.ReturnToCentre();
@@ -48,7 +53,7 @@ public class BossIdleState : BossState
 
     private void AttackPlayer(){
         if(numAttacks < bossData.maxAttacks){
-            //Debug.Log(currentAttack);
+            boss.bossVanish();
             currentAttack = Random.Range(1, 4);
             if (boss.attackType == Boss.bossAttackType.SOUL)
             {
@@ -62,41 +67,50 @@ public class BossIdleState : BossState
         }
         else{
             //execute burst attack
-            //Debug.Log("burst attack");
             stateMachine.ChangeState(boss.burstAttack);
         }
     }
 
     private void DecideAttackPlayer(){
-        switch(currentAttack){
+        switch (currentAttack)
+        {
             case 1:
-            //spike attack
-            stateMachine.ChangeState(boss.spikeAttack);
-            break;
+                //spike attack
+                stateMachine.ChangeState(boss.spikeAttack);
+                GameObject.Instantiate(bossData.spikeParticle, boss.transform.position, boss.transform.rotation);
+                break;
             case 2:
-            //lazer attack
-            stateMachine.ChangeState(boss.lazerAttack);
-            break;
+                //lazer attack
+                stateMachine.ChangeState(boss.lazerAttack);
+                GameObject.Instantiate(bossData.lazerParticle, boss.transform.position, boss.transform.rotation);
+                break;
             case 3:
-            stateMachine.ChangeState(boss.diskAttack);
-            break;
+                //disk attack
+                stateMachine.ChangeState(boss.diskAttack);
+                GameObject.Instantiate(bossData.diskParticle, boss.transform.position, boss.transform.rotation);
+                break;
         }
 
     }
 
     private void DecideAttackSoul(){
-        switch(currentAttack){
+        switch (currentAttack)
+        {
             case 1:
-            //silhouette attack 1
-            Debug.Log("silhouette 1");
-            break;
+                //silhouette attack 1
+                stateMachine.ChangeState(boss.silhouetteAttackHorizontal);
+                GameObject.Instantiate(bossData.silhouetteParticleHorizontal, boss.transform.position, boss.transform.rotation);
+                break;
             case 2:
-            //silhouette attack 2
-            Debug.Log("silhouette 2");
-            break;
+                //silhouette attack 2
+                stateMachine.ChangeState(boss.silhouetteAttackVertical);
+                GameObject.Instantiate(bossData.silhouetteParticleVertical, boss.transform.position, boss.transform.rotation);
+                break;
             case 3:
-            stateMachine.ChangeState(boss.diskAttack);
-            break;
+                //spike attack
+                stateMachine.ChangeState(boss.spikeAttack);
+                GameObject.Instantiate(bossData.spikeParticle, boss.transform.position, boss.transform.rotation);
+                break;
         }
     }
 

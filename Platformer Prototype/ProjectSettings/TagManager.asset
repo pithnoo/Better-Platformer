@@ -11,9 +11,16 @@ TagManager:
   - Lazer2
   - ReverseLazer1
   - ReverseLazer2
-  - ProjectileLauncher
   - Silhouette
   - Lazer
+  - ProjectileFlip
+  - sHorizontal
+  - sVertical
+  - hLauncherL
+  - hLauncherR
+  - vLauncherL
+  - vLauncherR
+  - ProjectileLauncher
   layers:
   - Default
   - TransparentFX

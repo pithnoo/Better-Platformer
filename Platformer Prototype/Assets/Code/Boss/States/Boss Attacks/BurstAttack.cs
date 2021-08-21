@@ -15,12 +15,11 @@ public class BurstAttack : BossAttackState
     public override void Enter()
     {
         base.Enter();
-        boss.bossInvincible = false;
-        
     }
     public override void Exit()
     {
         base.Exit();
+        boss.bossVunerable.SetActive(false);
         boss.bossInvincible = true;
     }
     public override void FinishAttack()
@@ -41,7 +40,8 @@ public class BurstAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-
+        boss.bossInvincible = false;
+        boss.bossVunerable.SetActive(true);
         SpawnProjectiles(bossData.numberOfProjectiles);
     }
 

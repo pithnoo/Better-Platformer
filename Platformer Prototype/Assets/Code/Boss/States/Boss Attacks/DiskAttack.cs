@@ -42,7 +42,7 @@ public class DiskAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        boss.transform.position = boss.escapePoint.transform.position;
         boss.SpawnGameObject("Disk", attackPosition);
-        Debug.Log("active");
     }
 }

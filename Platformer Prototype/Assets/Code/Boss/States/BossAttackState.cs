@@ -21,11 +21,13 @@ public class BossAttackState : BossState
         base.Enter();
 
         boss.atsm.attackState = this;
+        //Debug.Log(this);
         isAnimationFinished = false;
     }
     public override void Exit()
     {
         base.Exit();
+        boss.bossReturn();
     }
     public override void LogicUpdate()
     {

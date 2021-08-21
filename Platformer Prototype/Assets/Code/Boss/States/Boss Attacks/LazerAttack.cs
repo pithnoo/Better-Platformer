@@ -41,6 +41,7 @@ public class LazerAttack : BossAttackState
     {
         base.TriggerAttack();
         //GameObject.Instantiate(boss.lazer, boss.lazer1.transform.position, boss.lazer1.transform.rotation);
+        boss.transform.position = boss.escapePoint.transform.position;
         boss.SpawnGameObject("Lazer1", boss.lazer1);
     }
 }

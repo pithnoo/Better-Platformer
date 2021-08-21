@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
+    public BossTrail bossTrail {get; private set;}
     public float currentHealth;
     protected bool isDead;
     private LevelManager levelManager;
@@ -24,10 +25,12 @@ public class Boss : MonoBehaviour
     [SerializeField] private Transform playerCheck;
     [SerializeField] private Transform attackPosition;
     [SerializeField] private Transform originalPoint;
+    public Transform escapePoint;
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
     private SpriteRenderer SR;
     public bool secondPhase;
+    public GameObject bossVunerable;
 
     public enum bossAttackType{
         SOUL,
@@ -37,12 +40,12 @@ public class Boss : MonoBehaviour
     #endregion
 
     #region States
-    private enum bossCollisionState{
+    public enum bossCollisionState{
         SOUL,
         PLAYER
     }
 
-    [SerializeField] private bossCollisionState collisionState;
+    public bossCollisionState collisionState;
     public BossIdleState bossIdleState {get; private set;}
     public BurstAttack burstAttack {get; private set;}
     public DiskAttack diskAttack {get; private set;}
@@ -91,7 +94,9 @@ public class Boss : MonoBehaviour
         SR = aliveGO.GetComponent<SpriteRenderer>();
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
+        bossTrail = FindObjectOfType<BossTrail>();
 
+        bossTrail.gameObject.SetActive(false);
         currentHealth = bossData.maxHealth;
         facingDirection = 1;
         bossInvincible = true;
@@ -175,10 +180,10 @@ public class Boss : MonoBehaviour
                 stateMachine.ChangeState(bossIdleState);
                 bossIdleState.ResetNumAttacks();
             }
-            else{
-                damageDetails.damageAmount = bossData.collisionDamage;
-                other.transform.SendMessage("TakeDamage", damageDetails);
-            }
+            // else{
+            //     damageDetails.damageAmount = bossData.collisionDamage;
+            //     other.transform.SendMessage("TakeDamage", damageDetails);
+            // }
         }    
     }
 
@@ -188,9 +193,11 @@ public class Boss : MonoBehaviour
             case bossCollisionState.PLAYER:
                 spawnSoul();
                 attackType = bossAttackType.SOUL;
+                bossTrail.ResetSoulCheck();
                 break;
             case bossCollisionState.SOUL:
                 spawnPlayer();
+                bossTrail.ResetPlayerCheck();
                 attackType = bossAttackType.PLAYER;
                 break;
         }
@@ -198,7 +205,7 @@ public class Boss : MonoBehaviour
 
     private void spawnSoul(){
         if(levelManager.player.isDashing){
-            levelManager.currentHealth++;
+            //levelManager.currentHealth++;
             levelManager.player.isDashing = false;
             Destroy(levelManager.player.gameObject);
 
@@ -217,7 +224,7 @@ public class Boss : MonoBehaviour
 
     private void spawnPlayer(){
         //source.GenerateImpulse();
-        levelManager.currentHealth++;
+        //levelManager.currentHealth++;
         Destroy(levelManager.soul.gameObject);
 
         Instantiate(bossData.portalParticle, transform.position, transform.rotation);

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SilhouetteAttackVertical : BossAttackState
 {
-    private int randomStart;
-
     public SilhouetteAttackVertical(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
@@ -43,12 +41,8 @@ public class SilhouetteAttackVertical : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        randomStart = Random.Range(1,3);
-        switch(randomStart){
-            case 1:
-            break;
-            case 2:
-            break;
-        }
+        boss.transform.position = boss.escapePoint.transform.position;
+        boss.SpawnGameObject("vLauncherR", boss.vertical2);
+        boss.SpawnGameObject("vLauncherL", boss.vertical1);
     }
 }

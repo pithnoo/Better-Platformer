@@ -5,8 +5,8 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] private direction state;
-    [SerializeField] private float projectileSpeed;
-    [SerializeField] private float fireRate;
+    public float projectileSpeed;
+    public float fireRate;
     [SerializeField] private string projectileName;
     private float nextTimeToFire;
     public enum direction{

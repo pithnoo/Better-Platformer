@@ -43,6 +43,7 @@ public class SpikeAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        boss.transform.position = boss.escapePoint.transform.position;
         switch (stage)
         {
             case 1:

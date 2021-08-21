@@ -27,9 +27,11 @@ MonoBehaviour:
   soulToSpawn: {fileID: 2206098533709165171, guid: 0426534cfc3c8d54bbd2e07918d5bd6a, type: 3}
   portalParticle: {fileID: 7487225274396795923, guid: 0ced671d767cf924f89374c8954ba695, type: 3}
   projectile: {fileID: 789003703007552280, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
-  spikeParticle: {fileID: 0}
-  silhouetteParticle: {fileID: 0}
-  diskParticle: {fileID: 0}
+  spikeParticle: {fileID: 4320559863677430731, guid: e65c098a57cccd848bbd3cedd58bb5c2, type: 3}
+  silhouetteParticleHorizontal: {fileID: 1007351552426735154, guid: c219dd679a4c96348aa50810b4f1bbcb, type: 3}
+  silhouetteParticleVertical: {fileID: 413735968646696071, guid: 7bca333e59284f243a599793a52fcabf, type: 3}
+  diskParticle: {fileID: 8670932677018307119, guid: e2ea42c79b3e2914a8949223d32000bc, type: 3}
+  lazerParticle: {fileID: 7692402187537646530, guid: ff38ccbdbee60b647bb8d7197d84d868, type: 3}
   numberOfProjectiles: 8
   burstRadius: 0.25
   burstProjectileSpeed: 5
