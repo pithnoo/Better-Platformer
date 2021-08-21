@@ -15,14 +15,19 @@ public class BurstAttack : BossAttackState
     public override void Enter()
     {
         base.Enter();
+        boss.bossInvincible = false;
+        
     }
     public override void Exit()
     {
         base.Exit();
+        boss.bossInvincible = true;
     }
     public override void FinishAttack()
     {
         base.FinishAttack();
+        boss.bossIdleState.ResetNumAttacks();
+        stateMachine.ChangeState(boss.bossIdleState);
     }
     public override void LogicUpdate()
     {
@@ -31,6 +36,7 @@ public class BurstAttack : BossAttackState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        boss.ReturnToCentre();
     }
     public override void TriggerAttack()
     {

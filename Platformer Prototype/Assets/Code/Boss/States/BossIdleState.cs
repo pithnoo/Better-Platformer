@@ -5,9 +5,9 @@ using UnityEngine;
 public class BossIdleState : BossState
 {
     private int currentAttack;
-    private int numAttacks;
     private bool isIdleTimeOver;
     private int idleTime;
+    private int numAttacks;
     public BossIdleState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
     {
     }
@@ -34,6 +34,10 @@ public class BossIdleState : BossState
         if(Time.time >= startTime + idleTime){
             AttackPlayer();
         }
+
+        if(boss.currentHealth <= (boss.currentHealth / 2)){
+            boss.secondPhase = true;
+        }
     }
     public override void PhysicsUpdate()
     {
@@ -44,8 +48,8 @@ public class BossIdleState : BossState
 
     private void AttackPlayer(){
         if(numAttacks < bossData.maxAttacks){
-            currentAttack = Random.Range(1, 3);
-            Debug.Log(currentAttack);
+            //Debug.Log(currentAttack);
+            currentAttack = Random.Range(1, 4);
             if (boss.attackType == Boss.bossAttackType.SOUL)
             {
                 DecideAttackSoul();
@@ -58,7 +62,8 @@ public class BossIdleState : BossState
         }
         else{
             //execute burst attack
-            Debug.Log("burst attack");
+            //Debug.Log("burst attack");
+            stateMachine.ChangeState(boss.burstAttack);
         }
     }
 
@@ -66,11 +71,14 @@ public class BossIdleState : BossState
         switch(currentAttack){
             case 1:
             //spike attack
-            Debug.Log("spike");
+            stateMachine.ChangeState(boss.spikeAttack);
             break;
             case 2:
             //lazer attack
-            Debug.Log("lazer");
+            stateMachine.ChangeState(boss.lazerAttack);
+            break;
+            case 3:
+            stateMachine.ChangeState(boss.diskAttack);
             break;
         }
 
@@ -86,10 +94,15 @@ public class BossIdleState : BossState
             //silhouette attack 2
             Debug.Log("silhouette 2");
             break;
+            case 3:
+            stateMachine.ChangeState(boss.diskAttack);
+            break;
         }
     }
 
     private void SetRandomIdleTime(){
         idleTime = Random.Range(bossData.minIdleTime, bossData.maxIdleTime);
     }
+
+    public void ResetNumAttacks() => numAttacks = 0;
 }

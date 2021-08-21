@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6182142642845732072
+--- !u!1 &888618323437067725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6182142642845732079}
-  - component: {fileID: 6182142642845732073}
-  - component: {fileID: -6705453892930019992}
+  - component: {fileID: 888618323437067722}
+  - component: {fileID: 888618323437067724}
+  - component: {fileID: 1771144744229542413}
   m_Layer: 0
-  m_Name: ProjectileLauncher
-  m_TagString: ProjectileLauncher
+  m_Name: 'ProjectileFlipLauncher '
+  m_TagString: ProjectileFlip
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6182142642845732079
+--- !u!4 &888618323437067722
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6182142642845732072}
+  m_GameObject: {fileID: 888618323437067725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 70, y: 18.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,29 +32,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6182142642845732073
+--- !u!114 &888618323437067724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6182142642845732072}
+  m_GameObject: {fileID: 888618323437067725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f025c9864fc07b498c1362c487273ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
+  state: 0
   projectileSpeed: 30
   fireRate: 10
-  projectileName: ProjectilePillar
---- !u!114 &-6705453892930019992
+  projectileName: ProjectileFlip
+--- !u!114 &1771144744229542413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6182142642845732072}
+  m_GameObject: {fileID: 888618323437067725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ed036a8e46521d458e2c9ecc1325dc0, type: 3}

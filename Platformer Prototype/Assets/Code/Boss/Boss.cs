@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     private Player player;
     private Soul soul;
     private Portal portal;
-    private bool isInvincible;
+    public bool bossInvincible;
     private DamageDetails damageDetails;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private Transform attackPosition;
@@ -27,6 +27,7 @@ public class Boss : MonoBehaviour
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
     private SpriteRenderer SR;
+    public bool secondPhase;
 
     public enum bossAttackType{
         SOUL,
@@ -54,6 +55,8 @@ public class Boss : MonoBehaviour
     #endregion
 
     #region Attack Positions
+    [Header("Disk attack position")]
+    public Transform diskPosition;
     [Header("Spike attack positions")]
     public List<Transform> topSpikePositions;
     public List<Transform> bottomSpikePositions;
@@ -91,7 +94,8 @@ public class Boss : MonoBehaviour
 
         currentHealth = bossData.maxHealth;
         facingDirection = 1;
-        isInvincible = false;
+        bossInvincible = true;
+        secondPhase = false;
 
         attackType = bossAttackType.PLAYER;
         stateMachine.Initialise(bossIdleState);
@@ -148,12 +152,13 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ReturnToCentre() => transform.position = Vector2.MoveTowards(transform.position, originalPoint.position, bossData.flightSpeed * Time.deltaTime);
+    public void ReturnToCentre() => transform.position = Vector2.MoveTowards(transform.position, originalPoint.position, bossData.flightSpeed);
     public void BossFlight() => transform.position = originalPoint.position + (Vector3.right * Mathf.Sin(Time.time/2*bossData.flightSpeed)*bossData.xScaleFlight - Vector3.up * Mathf.Sin(Time.time * bossData.flightSpeed)*bossData.yScaleFlight);
     #endregion
     
     #region Other Functions
     public void SpawnGameObject(string entityTag, Transform spawnPosition){
+        //Debug.Log(spawnPosition);
         GameObject item = ObjectPool.SharedInstance.GetPooledObject(entityTag);
         if (item != null)
         {
@@ -164,8 +169,11 @@ public class Boss : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
-            if(!isInvincible){
+            if(!bossInvincible){
                 DecideSpawn();
+                currentHealth--;
+                stateMachine.ChangeState(bossIdleState);
+                bossIdleState.ResetNumAttacks();
             }
             else{
                 damageDetails.damageAmount = bossData.collisionDamage;
@@ -202,7 +210,7 @@ public class Boss : MonoBehaviour
             virtualCamera.m_Follow = levelManager.soul.transform;
             levelManager.state = LevelManager.currentPlayerState.SOUL;
 
-            isInvincible = true;
+            bossInvincible = true;
             collisionState = bossCollisionState.SOUL;
         }
     }
@@ -221,7 +229,7 @@ public class Boss : MonoBehaviour
         levelManager.state = LevelManager.currentPlayerState.PLAYER;
         //canSpawnPlayer = false;
 
-        isInvincible = true;
+        bossInvincible = true;
         collisionState = bossCollisionState.PLAYER;
     }
 

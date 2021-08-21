@@ -19,6 +19,8 @@ public class BossAttackState : BossState
     public override void Enter()
     {
         base.Enter();
+
+        boss.atsm.attackState = this;
         isAnimationFinished = false;
     }
     public override void Exit()
@@ -38,6 +40,7 @@ public class BossAttackState : BossState
     }
 
     public virtual void FinishAttack(){
+        stateMachine.ChangeState(boss.bossIdleState);
         isAnimationFinished = true;
     }
 }

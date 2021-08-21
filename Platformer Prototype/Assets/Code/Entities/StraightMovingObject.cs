@@ -7,18 +7,27 @@ public class StraightMovingObject : MonoBehaviour
     [SerializeField] private GameObject objectToMove;
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform endPoint;
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
     [SerializeField] private Vector3 currentTarget;
 
     public bool canMove;
-    public float delay;
+    private float delay;
+    public float delayMemory;
     public bool reachedPoint;
+
+    void OnEnable() {
+        canMove = false;
+        reachedPoint = false;
+        delay = delayMemory;
+        
+        currentTarget = endPoint.position;
+        objectToMove.transform.position = transform.position;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         currentTarget = endPoint.position;
-        canMove = false;
     }
 
     void Update() {

@@ -36,11 +36,13 @@ public class DiskAttack : BossAttackState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        boss.transform.position = Vector3.MoveTowards(boss.transform.position, boss.diskPosition.position, bossData.flightSpeed);
     }
 
     public override void TriggerAttack()
     {
         base.TriggerAttack();
         boss.SpawnGameObject("Disk", attackPosition);
+        Debug.Log("active");
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2918508423882196520}
   m_Layer: 0
   m_Name: LazerHolderX
-  m_TagString: Untagged
+  m_TagString: Lazer1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   moveSpeed: 7
   currentTarget: {x: 0, y: 0, z: 0}
   canMove: 0
-  delay: 1
+  delayMemory: 1
   reachedPoint: 0
 --- !u!114 &2918508423882196520
 MonoBehaviour:
@@ -67,6 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aa1985e5ca45c4fafec722ca5302b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondSpeed: 10
+  lazer1: {fileID: 0}
+  lazer2: {fileID: 0}
+  state: 0
 --- !u!1 &2918508424137600497
 GameObject:
   m_ObjectHideFlags: 0

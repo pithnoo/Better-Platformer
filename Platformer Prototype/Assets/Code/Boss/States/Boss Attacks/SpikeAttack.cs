@@ -17,6 +17,7 @@ public class SpikeAttack : BossAttackState
     public override void Enter()
     {
         base.Enter();
+        stage = 1;
     }
 
     public override void Exit()
@@ -42,15 +43,27 @@ public class SpikeAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        switch(stage){
+        switch (stage)
+        {
             case 1:
-            break;
+                SpawnSpikes(boss.bottomSpikePositions);
+                break;
             case 2:
-            break;
+                SpawnSpikes(boss.topSpikePositions);
+                break;
             case 3:
-            break;
+                SpawnSpikes(boss.bottomSpikePositions);
+                break;
             case 4:
-            break;
+                SpawnSpikes(boss.topSpikePositions);
+                break;
+        }
+        stage++;
+    }
+
+    private void SpawnSpikes(List<Transform> spikePositions){
+        for(int i = 0; i < spikePositions.Count; i++){
+            boss.SpawnGameObject("Lazer", spikePositions[i]);
         }
     }
 }

@@ -6,10 +6,10 @@ public class AnimationToStateMachine : MonoBehaviour
 {
     public BossAttackState attackState;
     private void TriggerAttack(){
-        
+        attackState.TriggerAttack();
     }
 
     private void FinishAttack(){
-        
+        attackState.FinishAttack();
     }
 }

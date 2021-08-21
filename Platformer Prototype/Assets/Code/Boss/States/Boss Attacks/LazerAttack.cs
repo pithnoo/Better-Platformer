@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LazerAttack : BossAttackState
 {
-    private int stage;
-
     public LazerAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
@@ -42,13 +40,7 @@ public class LazerAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        switch(stage){
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-        }
+        //GameObject.Instantiate(boss.lazer, boss.lazer1.transform.position, boss.lazer1.transform.rotation);
+        boss.SpawnGameObject("Lazer1", boss.lazer1);
     }
 }
