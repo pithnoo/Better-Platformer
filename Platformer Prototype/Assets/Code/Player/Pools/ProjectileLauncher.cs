@@ -5,8 +5,9 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] private direction state;
-    [SerializeField] private float projectileSpeed;
-    [SerializeField] private float fireRate;
+    public float projectileSpeed;
+    public float fireRate;
+    [SerializeField] private string projectileName;
     private float nextTimeToFire;
     public enum direction{
         UP,
@@ -20,15 +21,15 @@ public class ProjectileLauncher : MonoBehaviour
     {
         if(Time.time >= nextTimeToFire){
             nextTimeToFire = Time.time + 1f/fireRate;
-            ShootProjectile();
+            ShootProjectile(projectileName);
         }
     }
 
-    void ShootProjectile(){
-        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject("ProjectilePillar");
+    void ShootProjectile(string projectileString){
+        GameObject projectile = ObjectPool.SharedInstance.GetPooledObject(projectileString);
         if(projectile != null){
             projectile.transform.position = transform.position;
-            projectile.transform.rotation = transform.rotation;
+            //projectile.transform.rotation = transform.rotation;
             projectile.SetActive(true);
         }
 

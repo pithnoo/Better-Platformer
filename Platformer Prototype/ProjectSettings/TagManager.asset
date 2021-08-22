@@ -6,6 +6,22 @@ TagManager:
   tags:
   - MovingPlatform
   - ProjectilePillar
+  - Disk
+  - Lazer1
+  - Lazer2
+  - ReverseLazer1
+  - ReverseLazer2
+  - Silhouette
+  - Lazer
+  - ProjectileFlip
+  - sHorizontal
+  - sVertical
+  - hLauncherL
+  - hLauncherR
+  - vLauncherL
+  - vLauncherR
+  - ProjectileLauncher
+  - BossProjectile
   layers:
   - Default
   - TransparentFX
@@ -40,9 +56,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Player
     uniqueID: 3865889939
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0

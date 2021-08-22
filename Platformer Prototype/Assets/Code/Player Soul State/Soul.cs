@@ -28,12 +28,8 @@ public class Soul : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
-
-    void FixedUpdate() {
         rb.velocity = MovementInput * velocity;
     }
 
