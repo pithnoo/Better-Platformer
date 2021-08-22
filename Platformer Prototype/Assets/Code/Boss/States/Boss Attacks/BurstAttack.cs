@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BurstAttack : BossAttackState
 {
+    private float projectileSpeed;
     public BurstAttack(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName, Transform attackPosition) : base(boss, stateMachine, bossData, animBoolName, attackPosition)
     {
     }
@@ -15,6 +16,12 @@ public class BurstAttack : BossAttackState
     public override void Enter()
     {
         base.Enter();
+        if(boss.secondPhase){
+            projectileSpeed = 8;
+        }
+        else{
+            projectileSpeed = bossData.burstProjectileSpeed;
+        }
     }
     public override void Exit()
     {
@@ -57,7 +64,7 @@ public class BurstAttack : BossAttackState
             float projectileDirYposition = boss.transform.position.y  + Mathf.Cos((angle * Mathf.PI) / 180) * bossData.burstRadius;
 
             Vector3 projectileVector = new Vector3(projectileDirXposition, projectileDirYposition, 0f);
-            Vector3 projectileMoveDirection = (projectileVector - boss.transform.position).normalized * bossData.burstProjectileSpeed;
+            Vector3 projectileMoveDirection = (projectileVector - boss.transform.position).normalized * projectileSpeed;
 
             var proj = GameObject.Instantiate(bossData.projectile, boss.transform.position, Quaternion.identity);
             proj.transform.Rotate(0, 0, angle);

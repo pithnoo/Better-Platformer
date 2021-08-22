@@ -21,7 +21,7 @@ public class BossData : ScriptableObject
     [Header("Entities to spawn")]
     public GameObject playerToSpawn, soulToSpawn, portalParticle;
     public GameObject projectile;
-    public GameObject spikeParticle, silhouetteParticleHorizontal, silhouetteParticleVertical, diskParticle, lazerParticle;
+    public GameObject spikeParticle, silhouetteParticleHorizontal, silhouetteParticleVertical, diskParticle, lazerParticle, bossReturnParticle;
 
     [Header("Burst Attack")]
     public int numberOfProjectiles = 8;

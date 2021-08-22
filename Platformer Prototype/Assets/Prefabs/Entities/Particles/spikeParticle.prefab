@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4320559863677430727}
-  - component: {fileID: 4320559863677430726}
   - component: {fileID: 4320559863677430725}
   - component: {fileID: 4320559863677430724}
+  - component: {fileID: 4278574162994186851}
   m_Layer: 0
   m_Name: spikeParticle
   m_TagString: Untagged
@@ -33,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4320559863677430726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4320559863677430731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed036a8e46521d458e2c9ecc1325dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTimeSet: 1
 --- !u!198 &4320559863677430725
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4876,3 +4863,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4278574162994186851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320559863677430731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c916c2e534cb8824e8b12bcac3e855c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1

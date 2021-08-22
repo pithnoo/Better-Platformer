@@ -24,7 +24,7 @@ public class Boss : MonoBehaviour
     private DamageDetails damageDetails;
     [SerializeField] private Transform playerCheck;
     [SerializeField] private Transform attackPosition;
-    [SerializeField] private Transform originalPoint;
+    public Transform originalPoint;
     public Transform escapePoint;
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
@@ -75,6 +75,8 @@ public class Boss : MonoBehaviour
 
     #region Unity Callback Functions
     private void Awake() {
+        //bossData = Resources.Load<BossData>("Assets/Code/Boss/Data/BossPhase1");
+
         stateMachine = new BossStateMachine();
         bossIdleState = new BossIdleState(this, stateMachine, bossData, "idle");
         burstAttack = new BurstAttack(this, stateMachine, bossData, "burst", attackPosition);
@@ -158,7 +160,6 @@ public class Boss : MonoBehaviour
     }
 
     public void ReturnToCentre() => transform.position = Vector2.MoveTowards(transform.position, originalPoint.position, bossData.flightSpeed);
-    public void BossFlight() => transform.position = originalPoint.position + (Vector3.right * Mathf.Sin(Time.time/2*bossData.flightSpeed)*bossData.xScaleFlight - Vector3.up * Mathf.Sin(Time.time * bossData.flightSpeed)*bossData.yScaleFlight);
     #endregion
     
     #region Other Functions
@@ -243,6 +244,10 @@ public class Boss : MonoBehaviour
     private void ResetPlayerCheck() => player = FindObjectOfType<Player>();
     private void ResetSoulCheck() => soul = FindObjectOfType<Soul>();
     public void bossVanish() => SR.enabled = false;
-    public void bossReturn() => SR.enabled = true;
+    public void bossReturn() {
+        transform.position = originalPoint.position; 
+        GameObject.Instantiate(bossData.bossReturnParticle, transform.position, transform.rotation);
+        SR.enabled = true;
+    }
     #endregion
 }

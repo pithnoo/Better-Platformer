@@ -21,6 +21,7 @@ TagManager:
   - vLauncherL
   - vLauncherR
   - ProjectileLauncher
+  - BossProjectile
   layers:
   - Default
   - TransparentFX

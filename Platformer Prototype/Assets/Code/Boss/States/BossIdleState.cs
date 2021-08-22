@@ -6,8 +6,10 @@ public class BossIdleState : BossState
 {
     private int currentAttack;
     private bool isIdleTimeOver;
-    private int idleTime;
+    private int idleTime, maxIdleTime, minIdleTime;
+    private float flightSpeed;
     private int numAttacks;
+    private int maxAttacks;
     public BossIdleState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
     {
     }
@@ -19,14 +21,25 @@ public class BossIdleState : BossState
     public override void Enter()
     {
         base.Enter();
+
         if(boss.currentHealth <= (bossData.maxHealth / 2)){
             boss.secondPhase = true;
             boss.bossTrail.gameObject.SetActive(true);
+
+            maxAttacks = 6;
+            minIdleTime = 1;
+            maxIdleTime = 2;
+            flightSpeed = 5;
+        }
+        else{
+            maxIdleTime = bossData.maxIdleTime;
+            minIdleTime = bossData.minIdleTime;
+            maxAttacks = bossData.maxAttacks;
+            flightSpeed = bossData.flightSpeed;
         }
 
 
         SetRandomIdleTime();
-        boss.ReturnToCentre();
     }
     public override void Exit()
     {
@@ -47,12 +60,12 @@ public class BossIdleState : BossState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        boss.BossFlight();
+        boss.transform.position = boss.originalPoint.position + (Vector3.right * Mathf.Sin((Time.time - startTime)/2*flightSpeed)*bossData.xScaleFlight - Vector3.up * Mathf.Sin((Time.time - startTime) * flightSpeed)*bossData.yScaleFlight);
         boss.LookTowardsEntity();
     }
 
     private void AttackPlayer(){
-        if(numAttacks < bossData.maxAttacks){
+        if(numAttacks < maxAttacks){
             boss.bossVanish();
             currentAttack = Random.Range(1, 4);
             if (boss.attackType == Boss.bossAttackType.SOUL)
@@ -115,7 +128,7 @@ public class BossIdleState : BossState
     }
 
     private void SetRandomIdleTime(){
-        idleTime = Random.Range(bossData.minIdleTime, bossData.maxIdleTime);
+        idleTime = Random.Range(minIdleTime, maxIdleTime);
     }
 
     public void ResetNumAttacks() => numAttacks = 0;

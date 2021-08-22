@@ -7,6 +7,7 @@ public class BossState
     protected BossStateMachine stateMachine;
     protected Boss boss;
     protected BossData bossData;
+    protected BossData bossData2;
     protected float startTime;
     protected string animBoolName;
 
