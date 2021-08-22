@@ -33,6 +33,12 @@ MonoBehaviour:
   diskParticle: {fileID: 8670932677018307119, guid: e2ea42c79b3e2914a8949223d32000bc, type: 3}
   lazerParticle: {fileID: 7692402187537646530, guid: ff38ccbdbee60b647bb8d7197d84d868, type: 3}
   bossReturnParticle: {fileID: 1896559145584120067, guid: 46b59e9639c1fd74daa37d2c008d6f07, type: 3}
+  explosiveParticle1: {fileID: 3547161882779084487, guid: 44ca8c8f89741be4181c10af75724494, type: 3}
+  explosiveParticle2: {fileID: 1760383976865299321, guid: ff858e61e8534254c889b59917ce7df2, type: 3}
+  suctionParticle: {fileID: 7714648830764721648, guid: 1d20c011459990d479b91839704e0e3f, type: 3}
   numberOfProjectiles: 8
   burstRadius: 0.25
   burstProjectileSpeed: 5
+  source1: {fileID: 998908893293494665, guid: b3d13f1d5368a4b42835b11ebe3c65b9, type: 3}
+  source2: {fileID: 3574322288000481082, guid: 277ad8baec025da428901ae3116e36cb, type: 3}
+  source3: {fileID: 2919920500532093372, guid: d3e19c7e3703b9f4298d5afbc36103a7, type: 3}

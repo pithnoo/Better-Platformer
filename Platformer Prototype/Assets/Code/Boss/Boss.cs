@@ -47,6 +47,8 @@ public class Boss : MonoBehaviour
 
     public bossCollisionState collisionState;
     public BossIdleState bossIdleState {get; private set;}
+    public BossEntranceState bossEntranceState {get; private set;}
+    public BossDeadState bossDeadState {get; private set;}
     public BurstAttack burstAttack {get; private set;}
     public DiskAttack diskAttack {get; private set;}
     public LazerAttack lazerAttack {get; private set;}
@@ -79,6 +81,8 @@ public class Boss : MonoBehaviour
 
         stateMachine = new BossStateMachine();
         bossIdleState = new BossIdleState(this, stateMachine, bossData, "idle");
+        bossEntranceState = new BossEntranceState(this, stateMachine, bossData, "entrance", attackPosition);
+        bossDeadState = new BossDeadState(this, stateMachine, bossData, "dead", attackPosition);
         burstAttack = new BurstAttack(this, stateMachine, bossData, "burst", attackPosition);
         diskAttack = new DiskAttack(this, stateMachine, bossData, "disk", attackPosition);
         lazerAttack = new LazerAttack(this, stateMachine, bossData, "lazer", attackPosition);
@@ -105,7 +109,9 @@ public class Boss : MonoBehaviour
         secondPhase = false;
 
         attackType = bossAttackType.PLAYER;
-        stateMachine.Initialise(bossIdleState);
+
+        stateMachine.Initialise(bossEntranceState);
+        //stateMachine.Initialise(bossIdleState);
     }
 
     private void Update(){
@@ -177,14 +183,16 @@ public class Boss : MonoBehaviour
         if(other.tag == "Player"){
             if(!bossInvincible){
                 DecideSpawn();
-                currentHealth--;
                 stateMachine.ChangeState(bossIdleState);
                 bossIdleState.ResetNumAttacks();
+
+                if(currentHealth <= 0){
+                    //stateMachine.ChangeState(bossDeadState);
+                }
+                else{
+                    currentHealth--;
+                }
             }
-            // else{
-            //     damageDetails.damageAmount = bossData.collisionDamage;
-            //     other.transform.SendMessage("TakeDamage", damageDetails);
-            // }
         }    
     }
 

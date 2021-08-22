@@ -26,7 +26,6 @@ public class BossIdleState : BossState
             boss.secondPhase = true;
             boss.bossTrail.gameObject.SetActive(true);
 
-            maxAttacks = 6;
             minIdleTime = 1;
             maxIdleTime = 2;
             flightSpeed = 5;
