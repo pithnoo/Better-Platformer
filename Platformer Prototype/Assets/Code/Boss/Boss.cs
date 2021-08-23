@@ -186,8 +186,8 @@ public class Boss : MonoBehaviour
                 stateMachine.ChangeState(bossIdleState);
                 bossIdleState.ResetNumAttacks();
 
-                if(currentHealth <= 0){
-                    //stateMachine.ChangeState(bossDeadState);
+                if(currentHealth == 0){
+                    stateMachine.ChangeState(bossDeadState);
                 }
                 else{
                     currentHealth--;
