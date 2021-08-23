@@ -28,6 +28,7 @@ public class Boss : MonoBehaviour
     public Transform escapePoint;
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
+    public CinemachineVirtualCamera virtualCamera2;
     public CinemachineSwitcher cs;
     private SpriteRenderer SR;
     public bool secondPhase;
@@ -184,17 +185,21 @@ public class Boss : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             if(!bossInvincible){
-                DecideSpawn();
-                stateMachine.ChangeState(bossIdleState);
-                bossIdleState.ResetNumAttacks();
+                currentHealth--;
 
-                if(currentHealth == 0){
-                    spawnPlayer();
+                if(currentHealth <= 0){
                     stateMachine.ChangeState(bossDeadState);
+                    if(collisionState == bossCollisionState.SOUL){
+                        spawnPlayer();
+                    }
+                    virtualCamera2.m_Follow = levelManager.player.transform;
                 }
                 else{
-                    currentHealth--;
+                    DecideSpawn();
+                    stateMachine.ChangeState(bossIdleState);
+                    bossIdleState.ResetNumAttacks();
                 }
+
             }
         }    
     }

@@ -47,7 +47,6 @@ public class BossDeadState : BossAttackState
                 DeadShake();
                 break;
             case 2:
-                Debug.Log("active");
                 deathParticle2();
                 DeadShake2();
                 break;
@@ -71,7 +70,6 @@ public class BossDeadState : BossAttackState
 
     private void deathParticle2()
     {
-        Debug.Log("Active");
         GameObject.Instantiate(bossData.explosiveParticle1, boss.transform.position, boss.transform.rotation);
         GameObject.Instantiate(bossData.explosiveParticle2, boss.transform.position, boss.transform.rotation);
     }

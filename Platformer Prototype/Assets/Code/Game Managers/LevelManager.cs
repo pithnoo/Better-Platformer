@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public currentPlayerState state;    
     public bool isInvincible;
     public float invincibleTimer;
-    [SerializeField] private int maxHealth;
+    public int maxHealth;
     public int currentHealth; 
     [SerializeField] private GameObject deathParticle;
 
@@ -61,6 +61,18 @@ public class LevelManager : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(invincibleTimer);
         isInvincible = false;
+    }
+
+    public void healthRestore(int healthToRestore){
+        if(currentHealth < maxHealth){
+            currentHealth++;
+        }
+    }
+
+    public void fullRestore(){
+        if(currentHealth < maxHealth){
+            currentHealth = maxHealth;
+        }
     }
 
 }
