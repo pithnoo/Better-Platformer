@@ -28,9 +28,11 @@ public class Boss : MonoBehaviour
     public Transform escapePoint;
     private bool isWithPlayer, isWithSoul;
     public CinemachineVirtualCamera virtualCamera;
+    public CinemachineSwitcher cs;
     private SpriteRenderer SR;
     public bool secondPhase;
     public GameObject bossVunerable;
+    public GameObject bossGate;
 
     public enum bossAttackType{
         SOUL,
@@ -96,11 +98,11 @@ public class Boss : MonoBehaviour
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
-        portal = aliveGO.GetComponent<Portal>();
         SR = aliveGO.GetComponent<SpriteRenderer>();
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
         bossTrail = FindObjectOfType<BossTrail>();
+        cs = FindObjectOfType<CinemachineSwitcher>();
 
         bossTrail.gameObject.SetActive(false);
         currentHealth = bossData.maxHealth;
@@ -187,6 +189,7 @@ public class Boss : MonoBehaviour
                 bossIdleState.ResetNumAttacks();
 
                 if(currentHealth == 0){
+                    spawnPlayer();
                     stateMachine.ChangeState(bossDeadState);
                 }
                 else{

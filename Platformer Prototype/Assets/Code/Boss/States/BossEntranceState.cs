@@ -63,7 +63,6 @@ public class BossEntranceState : BossAttackState
     private void EntranceParticle1() => GameObject.Instantiate(bossData.suctionParticle, boss.transform.position, boss.transform.rotation);
     private void EntranceParticle2()
     {
-        Debug.Log("Active");
         GameObject.Instantiate(bossData.explosiveParticle1, boss.transform.position, boss.transform.rotation);
         GameObject.Instantiate(bossData.explosiveParticle2, boss.transform.position, boss.transform.rotation);
     }

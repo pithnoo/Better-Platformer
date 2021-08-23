@@ -52,6 +52,9 @@ public class BossDeadState : BossAttackState
                 DeadShake2();
                 break;
             case 3:
+                boss.cs.SwitchState();
+                GameObject.Instantiate(bossData.gateParticle, boss.bossGate.transform.position, boss.bossGate.transform.rotation);
+                boss.bossGate.SetActive(false);
                 boss.gameObject.SetActive(false);
                 break;
         }

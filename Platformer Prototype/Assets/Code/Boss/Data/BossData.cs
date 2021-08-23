@@ -24,6 +24,7 @@ public class BossData : ScriptableObject
     public GameObject projectile;
     public GameObject spikeParticle, silhouetteParticleHorizontal, silhouetteParticleVertical, diskParticle, lazerParticle, bossReturnParticle;
     public GameObject explosiveParticle1, explosiveParticle2, suctionParticle;
+    public GameObject gateParticle;
 
     [Header("Burst Attack")]
     public int numberOfProjectiles = 8;

@@ -19,7 +19,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private PortalType state;
 
     [Header("Cinemachine")]
-    public CinemachineVirtualCamera virtualCamera;
+    private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private CinemachineImpulseSource source;
     #endregion
 
@@ -33,6 +33,7 @@ public class Portal : MonoBehaviour
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
         
         // switch(state){
         //     case PortalType.PLAYER:
@@ -92,4 +93,5 @@ public class Portal : MonoBehaviour
             //canSpawnPlayer = false;
         }
     }
+
 }

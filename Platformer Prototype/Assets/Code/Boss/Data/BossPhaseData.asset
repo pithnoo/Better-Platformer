@@ -36,6 +36,7 @@ MonoBehaviour:
   explosiveParticle1: {fileID: 3547161882779084487, guid: 44ca8c8f89741be4181c10af75724494, type: 3}
   explosiveParticle2: {fileID: 1760383976865299321, guid: ff858e61e8534254c889b59917ce7df2, type: 3}
   suctionParticle: {fileID: 7714648830764721648, guid: 1d20c011459990d479b91839704e0e3f, type: 3}
+  gateParticle: {fileID: 5202017872143419617, guid: dc115bdc09498f941a0dc7c57b82844e, type: 3}
   numberOfProjectiles: 8
   burstRadius: 0.25
   burstProjectileSpeed: 5
