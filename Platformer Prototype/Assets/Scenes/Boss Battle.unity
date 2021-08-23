@@ -16773,6 +16773,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 45646807629346912, guid: bfbdc5ad88aaa1648961cd93becf0131, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 45646807629346912, guid: bfbdc5ad88aaa1648961cd93becf0131, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4
       objectReference: {fileID: 0}
@@ -17191,6 +17195,10 @@ PrefabInstance:
       propertyPath: virtualCamera
       value: 
       objectReference: {fileID: 1477512680}
+    - target: {fileID: 3931194649439663423, guid: d1cc8233d79ed75499d33c6d56ff8dce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3931194649664716942, guid: d1cc8233d79ed75499d33c6d56ff8dce, type: 3}
       propertyPath: m_RootOrder
       value: 2
