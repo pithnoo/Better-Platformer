@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &7154120224533078766
 MonoBehaviour:
@@ -135,9 +135,8 @@ MonoBehaviour:
     m_Bits: 256
   isWithPlayer: 0
   isWithSoul: 0
-  state: 0
-  virtualCamera: {fileID: 0}
-  source: {fileID: 8824587178017215799, guid: feae3be994d098c4c8eaef7e671d2908, type: 3}
+  state: 2
+  source: {fileID: 5017215429887859356, guid: 53147cfdc766c124ca96fee80d459acf, type: 3}
 --- !u!1001 &4418785246081921959
 PrefabInstance:
   m_ObjectHideFlags: 0

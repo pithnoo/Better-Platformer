@@ -21,6 +21,7 @@ public class Portal : MonoBehaviour
     [Header("Cinemachine")]
     private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private CinemachineImpulseSource source;
+    private LevelLoader levelLoader;
     #endregion
 
     public enum PortalType{
@@ -35,6 +36,7 @@ public class Portal : MonoBehaviour
     {
         levelManager = FindObjectOfType<LevelManager>();
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+        levelLoader = FindObjectOfType<LevelLoader>();
         
         // switch(state){
         //     case PortalType.PLAYER:
@@ -55,6 +57,9 @@ public class Portal : MonoBehaviour
                 break;
             case PortalType.SOUL:
                 spawnPlayer();
+                break;
+            case PortalType.LEVEL:
+                nextLevel();
                 break;
             default:
                 spawnSoul();
@@ -95,4 +100,25 @@ public class Portal : MonoBehaviour
         }
     }
 
+    public void nextLevel(){
+        isWithSoul = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsSoul);
+        isWithPlayer = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsPlayer);
+        if (isWithPlayer || isWithSoul)
+        {
+            StartCoroutine("levelLoad");
+        }
+    }
+    
+    private IEnumerator levelLoad(){
+        source.GenerateImpulse();
+        Instantiate(portalParticle, transform.position, transform.rotation);
+        if(isWithPlayer){
+            Destroy(levelManager.player.gameObject);
+        }
+        else{
+            Destroy(levelManager.soul.gameObject);
+        }
+        yield return new WaitForSeconds(3);
+        levelLoader.loadNextLevel();
+    }
 }

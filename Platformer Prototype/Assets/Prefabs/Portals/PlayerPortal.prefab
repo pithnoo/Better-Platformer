@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &6955632255823226754
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   portalParticle: {fileID: 7487225274396795923, guid: 0ced671d767cf924f89374c8954ba695, type: 3}
   soulToSpawn: {fileID: 2206098533709165171, guid: 0426534cfc3c8d54bbd2e07918d5bd6a, type: 3}
   playerToSpawn: {fileID: 733453081232784544, guid: e8af491b35905944fb346a87416483ea, type: 3}
-  detectionRadius: 1
+  detectionRadius: 2
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
@@ -136,7 +136,6 @@ MonoBehaviour:
   isWithPlayer: 0
   isWithSoul: 0
   state: 0
-  virtualCamera: {fileID: 0}
   source: {fileID: 8824587178017215799, guid: feae3be994d098c4c8eaef7e671d2908, type: 3}
 --- !u!1001 &4511895556424988363
 PrefabInstance:
