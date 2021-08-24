@@ -1,2 +1,2 @@
-# Better-Platformer
-Project containing better platforming physics
+# Soul
+Project focused on learning more of screen shake, player movement and inheritance 
