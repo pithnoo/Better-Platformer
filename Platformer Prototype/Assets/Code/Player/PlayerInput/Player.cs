@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Color hurtColour;
     private SpriteRenderer spriteRenderer;
     public Vector3 respawnPosition;
+    public GameObject respawnParticle;
     
     #endregion
     

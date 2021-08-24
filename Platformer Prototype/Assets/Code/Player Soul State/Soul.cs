@@ -18,6 +18,7 @@ public class Soul : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Color hurtColour;
     public Vector3 respawnPosition;
+    public GameObject respawnParticle;
 
     // Start is called before the first frame update
     void Start()
