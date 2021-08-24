@@ -25,7 +25,8 @@ public class Portal : MonoBehaviour
 
     public enum PortalType{
         PLAYER,
-        SOUL
+        SOUL,
+        LEVEL
     }
 
 
