@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2974491841801953478}
   - component: {fileID: 2318786355793358340}
   - component: {fileID: 2514010659653057258}
+  - component: {fileID: -8172482798782604803}
   m_Layer: 0
   m_Name: FullRestore
   m_TagString: Untagged
@@ -124,3 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullRestore: 1
   healthToRestore: 2
+--- !u!114 &-8172482798782604803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665053214817255893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c3099eeda095f4d8128f3e016b9d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 2
+  height: 0.01

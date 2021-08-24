@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5550378520269723184}
   - component: {fileID: 5031282616241851243}
+  - component: {fileID: 337006706424313819}
   m_Layer: 0
   m_Name: HorizontalHolder
   m_TagString: sHorizontal
@@ -185,6 +186,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &337006706424313819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044625226080409471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed036a8e46521d458e2c9ecc1325dc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTimeSet: 10
 --- !u!1 &1270424141837405666
 GameObject:
   m_ObjectHideFlags: 0

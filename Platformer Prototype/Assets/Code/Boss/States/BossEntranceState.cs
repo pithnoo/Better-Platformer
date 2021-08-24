@@ -29,6 +29,7 @@ public class BossEntranceState : BossAttackState
     public override void FinishAttack()
     {
         base.FinishAttack();
+        boss.bossTrail.gameObject.SetActive(true);
     }
 
     public override void LogicUpdate()

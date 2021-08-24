@@ -13,7 +13,7 @@ public class Boss : MonoBehaviour
     public Animator anim { get; private set; }
     public GameObject aliveGO { get; private set; }
     public AnimationToStateMachine atsm { get; private set; }
-    public BossTrail bossTrail {get; private set;}
+    public BossTrail bossTrail;
     public float currentHealth;
     protected bool isDead;
     private LevelManager levelManager;
@@ -102,10 +102,9 @@ public class Boss : MonoBehaviour
         SR = aliveGO.GetComponent<SpriteRenderer>();
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
-        bossTrail = FindObjectOfType<BossTrail>();
         cs = FindObjectOfType<CinemachineSwitcher>();
 
-        bossTrail.gameObject.SetActive(false);
+        //bossTrail.gameObject.SetActive(false);
         currentHealth = bossData.maxHealth;
         facingDirection = 1;
         bossInvincible = true;
@@ -259,8 +258,12 @@ public class Boss : MonoBehaviour
 
     private void ResetPlayerCheck() => player = FindObjectOfType<Player>();
     private void ResetSoulCheck() => soul = FindObjectOfType<Soul>();
-    public void bossVanish() => SR.enabled = false;
+    public void bossVanish() { 
+        SR.enabled = false;
+        bossTrail.gameObject.SetActive(false);
+    }    
     public void bossReturn() {
+        bossTrail.gameObject.SetActive(true);
         transform.position = originalPoint.position; 
         GameObject.Instantiate(bossData.bossReturnParticle, transform.position, transform.rotation);
         SR.enabled = true;

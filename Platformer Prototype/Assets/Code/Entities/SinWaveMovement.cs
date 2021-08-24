@@ -15,9 +15,9 @@ public class SinWaveMovement : MonoBehaviour
     }
     public direction state;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        point = transform.position;
+        point = transform.parent.position;
         if (state == direction.RIGHT)
         {
             axis = transform.right;
