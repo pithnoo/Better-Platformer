@@ -12,7 +12,9 @@ public class LevelManager : MonoBehaviour
     public float invincibleTimer;
     public int maxHealth;
     public int currentHealth; 
+    public float respawnTime;
     [SerializeField] private GameObject deathParticle;
+    private ResetOnRespawn[] objectsToReset;
 
     public enum currentPlayerState{
         PLAYER,
@@ -24,6 +26,7 @@ public class LevelManager : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         soul = FindObjectOfType<Soul>();
+        objectsToReset = FindObjectsOfType<ResetOnRespawn>();
 
         currentHealth = maxHealth;
     }
@@ -72,6 +75,30 @@ public class LevelManager : MonoBehaviour
     public void fullRestore(){
         if(currentHealth < maxHealth){
             currentHealth = maxHealth;
+        }
+    }
+
+    public IEnumerator Respawn(){
+        yield return new WaitForSeconds(respawnTime);
+
+        //respawn player
+        switch(state){
+            case currentPlayerState.PLAYER:
+                player.transform.position = player.respawnPosition;
+                player.gameObject.SetActive(true);
+                break;
+            case currentPlayerState.SOUL:
+                soul.transform.position = soul.respawnPosition;
+                soul.gameObject.SetActive(true);
+                break;
+        }
+
+        if(objectsToReset.Length > 0){
+            for (int i = 0; i < objectsToReset.Length; i++)
+            {
+                objectsToReset[i].ResetObject();
+                objectsToReset[i].gameObject.SetActive(true);
+            }
         }
     }
 

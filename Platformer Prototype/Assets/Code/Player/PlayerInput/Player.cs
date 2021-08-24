@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     private LevelManager levelManager;
     [SerializeField] private Color hurtColour;
     private SpriteRenderer spriteRenderer;
+    public Vector3 respawnPosition;
     
     #endregion
     
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
 
         FacingDirection = 1;
         onPlatform = false;
+        respawnPosition = transform.position;
     }
 
     private void Update() {

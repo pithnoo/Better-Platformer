@@ -17,6 +17,7 @@ public class Soul : MonoBehaviour
     public bool isInvincible;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Color hurtColour;
+    public Vector3 respawnPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Soul : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isInvincible = false;
+        respawnPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -49,5 +51,11 @@ public class Soul : MonoBehaviour
         spriteRenderer.color = hurtColour;
         yield return new WaitForSeconds(0.05f);
         spriteRenderer.color = Color.white;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Checkpoint"){
+            respawnPosition = other.transform.position;
+        }
     }
 }

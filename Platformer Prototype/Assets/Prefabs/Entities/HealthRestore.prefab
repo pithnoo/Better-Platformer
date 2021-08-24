@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6180748757081936049}
   - component: {fileID: 6180748757081936062}
   - component: {fileID: -8930781262611746763}
+  - component: {fileID: 7469560632875928933}
   m_Layer: 0
   m_Name: HealthRestore
   m_TagString: Untagged
@@ -139,3 +140,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 2
   height: 0.01
+--- !u!114 &7469560632875928933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180748757081936050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32f202d2fa92d14c9f162a4d06ed9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
