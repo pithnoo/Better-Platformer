@@ -22,6 +22,8 @@ TagManager:
   - vLauncherR
   - ProjectileLauncher
   - BossProjectile
+  - SingleDisk
+  - MovingLazer
   layers:
   - Default
   - TransparentFX

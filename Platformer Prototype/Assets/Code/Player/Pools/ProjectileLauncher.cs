@@ -29,7 +29,7 @@ public class ProjectileLauncher : MonoBehaviour
         GameObject projectile = ObjectPool.SharedInstance.GetPooledObject(projectileString);
         if(projectile != null){
             projectile.transform.position = transform.position;
-            //projectile.transform.rotation = transform.rotation;
+            projectile.transform.rotation = transform.rotation;
             projectile.SetActive(true);
         }
 

@@ -84,12 +84,12 @@ public class LevelManager : MonoBehaviour
         //respawn player
         switch(state){
             case currentPlayerState.PLAYER:
-                player.transform.position = player.respawnPosition;
+                player.transform.position = new Vector2(player.respawnPosition.x, player.respawnPosition.y + 5);
                 player.respawnParticle.SetActive(true);
                 player.gameObject.SetActive(true);
                 break;
             case currentPlayerState.SOUL:
-                soul.transform.position = soul.respawnPosition;
+                soul.transform.position = new Vector2(soul.respawnPosition.x, soul.respawnPosition.y);
                 soul.respawnParticle.SetActive(true);
                 soul.gameObject.SetActive(true);
                 break;

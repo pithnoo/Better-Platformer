@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6182142642845732079}
   - component: {fileID: 6182142642845732073}
-  - component: {fileID: -6705453892930019992}
   m_Layer: 0
   m_Name: ProjectileLauncher
   m_TagString: ProjectileLauncher
@@ -45,19 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  projectileSpeed: 30
-  fireRate: 10
+  projectileSpeed: 5
+  fireRate: 1
   projectileName: ProjectilePillar
---- !u!114 &-6705453892930019992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6182142642845732072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ed036a8e46521d458e2c9ecc1325dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTimeSet: 2

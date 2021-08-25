@@ -126,7 +126,7 @@ MonoBehaviour:
   portalParticle: {fileID: 7487225274396795923, guid: 0ced671d767cf924f89374c8954ba695, type: 3}
   soulToSpawn: {fileID: 2206098533709165171, guid: 0426534cfc3c8d54bbd2e07918d5bd6a, type: 3}
   playerToSpawn: {fileID: 733453081232784544, guid: e8af491b35905944fb346a87416483ea, type: 3}
-  detectionRadius: 1
+  detectionRadius: 3
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128

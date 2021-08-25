@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5924006610322371069}
   m_Layer: 0
   m_Name: Disk
-  m_TagString: Untagged
+  m_TagString: SingleDisk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5924006610998882885}
   m_Layer: 0
   m_Name: Disk (1)
-  m_TagString: Untagged
+  m_TagString: SingleDisk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

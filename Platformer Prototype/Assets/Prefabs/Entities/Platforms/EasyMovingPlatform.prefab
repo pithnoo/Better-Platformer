@@ -231,6 +231,7 @@ MonoBehaviour:
   moveSpeed: 5
   currentTarget: {x: 0, y: 0, z: 0}
   canMove: 0
+  delayMemory: 0
   reachedPoint: 0
 --- !u!1 &2548768133091564806
 GameObject:
@@ -337,6 +338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8545079385723054086, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
+      propertyPath: isProjectile
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4178958967616911085, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
@@ -407,6 +412,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144241129763109933, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545079385723054086, guid: 039d63b3b1898354ca254a63663c9974, type: 3}
+      propertyPath: isProjectile
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
