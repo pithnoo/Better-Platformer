@@ -42,4 +42,5 @@ public class PlayerData : ScriptableObject
     public float distanceBetweenAfterImages = 0.25f;
     [Header("Other Variables")]
     public int playerHealth;
+    public GameObject dashParticle;
 }

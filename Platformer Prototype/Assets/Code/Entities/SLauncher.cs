@@ -12,6 +12,7 @@ public class SLauncher : MonoBehaviour
     void OnEnable() {
         projectileLauncher = GetComponent<ProjectileLauncher>();
         boss = FindObjectOfType<Boss>();
+
         if(boss.secondPhase){
             projectileLauncher.projectileSpeed = velocity2;
             projectileLauncher.fireRate = fireRate2;

@@ -9,6 +9,7 @@ public class BossManager : MonoBehaviour
     [SerializeField] private float bossWaitTime;
     [SerializeField] private GameObject bossGate, bossGate2, gateParticle;
     [SerializeField] private CinemachineSwitcher cs;
+    private bool hasSwitched = false;
     void Start() {
         cs = FindObjectOfType<CinemachineSwitcher>();
     }
@@ -16,7 +17,10 @@ public class BossManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             //change current camera
-            cs.SwitchState();
+            if(!hasSwitched){
+                cs.SwitchState();
+                hasSwitched = true;
+            }
 
             bossGate.SetActive(true);
             Instantiate(gateParticle, bossGate.transform.position, bossGate.transform.rotation);

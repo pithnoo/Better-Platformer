@@ -19,6 +19,7 @@ public class Soul : MonoBehaviour
     [SerializeField] private Color hurtColour;
     public Vector3 respawnPosition;
     public GameObject respawnParticle;
+    private PlayerInputHandler inputHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class Soul : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         levelManager = FindObjectOfType<LevelManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        inputHandler = GetComponent<PlayerInputHandler>();
         isInvincible = false;
         respawnPosition = transform.position;
     }
@@ -33,14 +35,7 @@ public class Soul : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = MovementInput * velocity;
-    }
-
-    public void Move(InputAction.CallbackContext context){
-        MovementInput = context.ReadValue<Vector2>().normalized;
-
-        // xRaw = (int)(MovementInput * Vector2.right).normalized.x;
-        // yRaw = (int)(MovementInput * Vector2.up).normalized.y;
+        rb.velocity = inputHandler.RawMovementInput.normalized * velocity;
     }
 
     public void TakeDamage(DamageDetails damageDetails){

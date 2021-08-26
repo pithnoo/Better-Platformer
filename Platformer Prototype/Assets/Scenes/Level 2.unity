@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -599,11 +599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6955632255823226755, guid: 0821a95ce9f07aa49b6b8d7a9369f04e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.266267
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6955632255823226755, guid: 0821a95ce9f07aa49b6b8d7a9369f04e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9088987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6955632255823226755, guid: 0821a95ce9f07aa49b6b8d7a9369f04e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5017215429887859356, guid: 53147cfdc766c124ca96fee80d459acf, type: 3}
   damage: 1
-  deathParticle: {fileID: 7487225274396795923, guid: 0ced671d767cf924f89374c8954ba695, type: 3}
+  deathParticle: {fileID: 6386403059827837579, guid: 6171a304668b29f4196d94aa45950897, type: 3}
 --- !u!483693784 &800812316
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -15323,7 +15323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154120224533078767, guid: b74415b4c85af1c4a8fa6762e61690d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48
+      value: -47
       objectReference: {fileID: 0}
     - target: {fileID: 7154120224533078767, guid: b74415b4c85af1c4a8fa6762e61690d4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5239297765001099736}
   - component: {fileID: 5239297765001099737}
   - component: {fileID: 5239297765001099742}
+  - component: {fileID: 5715243183516429883}
   m_Layer: 0
   m_Name: SoulPortal
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cd54427bf0b798e41b595d1e686a6013, type: 3}
+  m_Sprite: {fileID: 6809306005423741248, guid: c1aefb8cc2e1a054683bebfc21636b3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -137,6 +138,25 @@ MonoBehaviour:
   isWithSoul: 0
   state: 1
   source: {fileID: 8824587178017215799, guid: feae3be994d098c4c8eaef7e671d2908, type: 3}
+--- !u!95 &5715243183516429883
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5239297765001099743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87279619b39802c4d8ef9281d27c5931, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5239297763949424096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6780775849754401640, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6780775849754401640, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -193,16 +213,20 @@ PrefabInstance:
       value: SoulParticle
       objectReference: {fileID: 0}
     - target: {fileID: 6780775849754401647, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780775849754401647, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 0.5686275
       objectReference: {fileID: 0}
     - target: {fileID: 6780775849754401647, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.49785483
+      value: 0.7176471
       objectReference: {fileID: 0}
     - target: {fileID: 6780775849754401647, guid: f88847c792b58e14880d063dc81c65a2, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
+      value: 0.93725497
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f88847c792b58e14880d063dc81c65a2, type: 3}

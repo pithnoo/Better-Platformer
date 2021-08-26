@@ -48,6 +48,7 @@ public class PlayerDashState : PlayerAbilityState
                     dashDirection = dashDirectionInput;
                     dashDirection.Normalize();
                 }
+                GameObject.Instantiate(playerData.dashParticle, player.transform.position, player.transform.rotation);
 
                 isHolding = false;
                 startTime = Time.time;

@@ -34,3 +34,4 @@ MonoBehaviour:
   dashEndYMultiplier: 0.1
   distanceBetweenAfterImages: 0.25
   playerHealth: 10
+  dashParticle: {fileID: 3376713217984492906, guid: d4868ff72320d0040b08f08b5a39678a, type: 3}

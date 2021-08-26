@@ -16301,9 +16301,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 2022274279}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 1268096144}
-  - {fileID: 1155792214}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: 912603144
     m_VirtualCamera: {fileID: 1268096144}
@@ -16440,7 +16438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.230001
+      value: -8.030001
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.z
