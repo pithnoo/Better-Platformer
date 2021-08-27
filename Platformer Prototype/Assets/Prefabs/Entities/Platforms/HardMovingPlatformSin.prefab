@@ -115,7 +115,7 @@ MonoBehaviour:
   objectToMove: {fileID: 7576714499836488845}
   moveSpeed: 500
   startPoint: {x: 0, y: 0, z: 0}
-  state: 0
+  state: 1
   canMove: 0
 --- !u!1 &7576714499836488845
 GameObject:
