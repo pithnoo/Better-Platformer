@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -384,6 +384,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &348163842
 Transform:
@@ -397,7 +398,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &348493932
 PrefabInstance:
@@ -538,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,7 +596,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6955632255823226755, guid: 0821a95ce9f07aa49b6b8d7a9369f04e, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6955632255823226755, guid: 0821a95ce9f07aa49b6b8d7a9369f04e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -694,6 +695,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!1001 &623061169
 PrefabInstance:
@@ -789,6 +791,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &689308854
 Transform:
@@ -14891,7 +14894,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2969712529643860498, guid: a57dec7cfcf4ca5418c5402816b00c98, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2969712529643860498, guid: a57dec7cfcf4ca5418c5402816b00c98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14985,6 +14988,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!1001 &981033371
 PrefabInstance:
@@ -15197,7 +15201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15315,7 +15319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154120224533078767, guid: b74415b4c85af1c4a8fa6762e61690d4, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7154120224533078767, guid: b74415b4c85af1c4a8fa6762e61690d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15368,7 +15372,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2969712529643860498, guid: a57dec7cfcf4ca5418c5402816b00c98, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2969712529643860498, guid: a57dec7cfcf4ca5418c5402816b00c98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15448,6 +15452,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &1209378841
 Transform:
@@ -15581,6 +15586,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!1001 &1373923680
 PrefabInstance:
@@ -15767,7 +15773,7 @@ Transform:
   - {fileID: 801616220}
   - {fileID: 1765324491}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427335530
 GameObject:
@@ -15801,6 +15807,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &1427335532
 Transform:
@@ -15924,6 +15931,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &1547790207 stripped
 Transform:
@@ -116984,6 +116992,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &1713077597
 Transform:
@@ -117016,7 +117025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117205,7 +117214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117266,7 +117275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1137520161073414261, guid: 090bf159f073491448547a5c8d2855e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117332,7 +117341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6180748757081936063, guid: 5b078c8f19bd2c943a72db2f7bd8afa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117422,6 +117431,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!1 &1872654491
 GameObject:
@@ -117469,6 +117479,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!1 &1896022359
 GameObject:
@@ -117516,12 +117527,82 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &1915930877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6182142642845732079, guid: 3eda026d4ed9ac64b851f0d8233ff48a, type: 3}
   m_PrefabInstance: {fileID: 1780902181}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1926199685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7268282194749042505, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_text
+      value: "Dash into \nfountain"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282194796630504, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304246, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195510304249, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_Name
+      value: InstructionsHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268282195912912521, guid: 49637c9223162294199ea0e2991b2694, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49637c9223162294199ea0e2991b2694, type: 3}
 --- !u!4 &1962098902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7450969979134405676, guid: 54fc44c3d75b7be47ad1177ec4276e8e, type: 3}
@@ -117559,6 +117640,7 @@ MonoBehaviour:
   state: 3
   projectileSpeed: 0
   fireRate: 0.3
+  isFlip: 0
   projectileName: Lazer
 --- !u!4 &2043730529
 Transform:
@@ -117799,7 +117881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1159282896543564228
 Rigidbody2D:
@@ -117989,7 +118071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7450969979134405676, guid: 54fc44c3d75b7be47ad1177ec4276e8e, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7450969979134405676, guid: 54fc44c3d75b7be47ad1177ec4276e8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118104,7 +118186,7 @@ Transform:
   - {fileID: 6247234569040105924}
   - {fileID: 28907937}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4511598890399060929
 GameObject:

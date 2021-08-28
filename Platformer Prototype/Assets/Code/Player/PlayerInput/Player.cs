@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
         StartCoroutine("HitFlash");
         source.GenerateImpulse();
         levelManager.DecreasePlayerHealth(damageDetails);
-    }
+    } 
     #endregion
     
     #region Check Functions
