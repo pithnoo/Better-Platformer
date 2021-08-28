@@ -68330,7 +68330,9 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 2022274279}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 1268096144}
+  - {fileID: 1155792214}
   m_Instructions:
   - m_FullHash: 912603144
     m_VirtualCamera: {fileID: 1268096144}
@@ -68468,11 +68470,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33
+      value: -26.7
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -66
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 733453081232784556, guid: e8af491b35905944fb346a87416483ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68541,11 +68543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33
+      value: -26.7
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -70.03
+      value: -8.83
       objectReference: {fileID: 0}
     - target: {fileID: 1795607763964055787, guid: a8b84a470eb2d8941830966fb30c6ab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -68637,6 +68639,15 @@ MonoBehaviour:
     shouldExpand: 1
   - amountToPool: 20
     objectToPool: {fileID: 3922365415524074048, guid: d88444354b54de148abf8d42f7f691c5, type: 3}
+    shouldExpand: 1
+  - amountToPool: 20
+    objectToPool: {fileID: 3922365415524074048, guid: d88444354b54de148abf8d42f7f691c5, type: 3}
+    shouldExpand: 1
+  - amountToPool: 20
+    objectToPool: {fileID: 456506311946053338, guid: b6fca9ff34ea3d24d8940beb70a868fc, type: 3}
+    shouldExpand: 1
+  - amountToPool: 20
+    objectToPool: {fileID: 5375724214212415462, guid: 7bc9e42b945c12b42a42643c671488e1, type: 3}
     shouldExpand: 1
 --- !u!81 &2032059540162792882
 AudioListener:

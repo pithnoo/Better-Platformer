@@ -8,7 +8,7 @@ public class BossTrail : MonoBehaviour
         PLAYER,
         SOUL
     }
-    private lookState state;
+    [SerializeField] private lookState state;
     private Player player;
     private Soul soul;
     private LevelManager levelManager;
@@ -17,6 +17,13 @@ public class BossTrail : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         soul = FindObjectOfType<Soul>();
+
+        if(player == null){
+            state = lookState.SOUL;
+        }
+        else{
+            state = lookState.PLAYER;
+        }
         levelManager = FindObjectOfType<LevelManager>();
     }
 

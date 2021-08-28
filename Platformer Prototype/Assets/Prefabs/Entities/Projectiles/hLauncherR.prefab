@@ -48,7 +48,8 @@ MonoBehaviour:
   state: 0
   projectileSpeed: 8
   fireRate: 1
-  projectileName: sHorizontal
+  isFlip: 1
+  projectileName: sHorizontalFlip
 --- !u!114 &4577693203916250739
 MonoBehaviour:
   m_ObjectHideFlags: 0

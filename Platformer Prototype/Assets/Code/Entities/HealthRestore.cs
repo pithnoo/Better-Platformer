@@ -16,7 +16,7 @@ public class HealthRestore : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             if(levelManager.currentHealth < levelManager.maxHealth){
-                if(fullRestore){
+                if(!fullRestore){
                     levelManager.healthRestore(healthToRestore);
                 }
                 else{

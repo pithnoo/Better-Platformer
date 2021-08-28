@@ -21,10 +21,10 @@ public class BossIdleState : BossState
     public override void Enter()
     {
         base.Enter();
+        boss.bossTrail.gameObject.SetActive(true);
 
         if(boss.currentHealth <= (bossData.maxHealth / 2)){
             boss.secondPhase = true;
-            boss.bossTrail.gameObject.SetActive(true);
 
             minIdleTime = 1;
             maxIdleTime = 2;

@@ -7,6 +7,7 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] private direction state;
     public float projectileSpeed;
     public float fireRate;
+    public bool isFlip;
     [SerializeField] private string projectileName;
     private float nextTimeToFire;
     public enum direction{
@@ -29,7 +30,9 @@ public class ProjectileLauncher : MonoBehaviour
         GameObject projectile = ObjectPool.SharedInstance.GetPooledObject(projectileString);
         if(projectile != null){
             projectile.transform.position = transform.position;
-            projectile.transform.rotation = transform.rotation;
+            if(!isFlip){
+                projectile.transform.rotation = transform.rotation;
+            }
             projectile.SetActive(true);
         }
 
