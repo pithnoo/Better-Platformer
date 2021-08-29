@@ -9,17 +9,23 @@ public class DeadZone : MonoBehaviour
     [SerializeField] private CinemachineImpulseSource source;
     [SerializeField] private int damage;
     [SerializeField] private GameObject deathParticle;
+    private HealthManager healthManager;
     // Start is called before the first frame update
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        healthManager = FindObjectOfType<HealthManager>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             Instantiate(deathParticle, other.transform.position, other.transform.rotation);
+
             levelManager.currentHealth -= damage;
+            healthManager.UpdateHealth(levelManager.currentHealth);
+
             other.gameObject.SetActive(false);
+            
             source.GenerateImpulse();
             levelManager.StartCoroutine("Respawn");
         }

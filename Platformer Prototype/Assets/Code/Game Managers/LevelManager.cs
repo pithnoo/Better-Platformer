@@ -15,6 +15,9 @@ public class LevelManager : MonoBehaviour
     public float respawnTime;
     [SerializeField] private GameObject deathParticle;
     private ResetOnRespawn[] objectsToReset;
+    private HealthManager healthManager;
+    public bool isGameOver;
+    private LevelLoader levelLoader;
 
     public enum currentPlayerState{
         PLAYER,
@@ -27,8 +30,10 @@ public class LevelManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         soul = FindObjectOfType<Soul>();
         objectsToReset = FindObjectsOfType<ResetOnRespawn>();
-
+        healthManager = FindObjectOfType<HealthManager>();
+        levelLoader = FindObjectOfType<LevelLoader>();
         currentHealth = maxHealth;
+        isGameOver = false;
     }
 
     // Update is called once per frame
@@ -42,9 +47,11 @@ public class LevelManager : MonoBehaviour
     public void DecreasePlayerHealth(DamageDetails damageDetails){
         if(!isInvincible){
             currentHealth -= damageDetails.damageAmount;
+            healthManager.UpdateHealth(currentHealth);
             StartCoroutine("InvincibleTimer");
             if (currentHealth <= 0)
             {
+                isGameOver = true;
                 switch (state)
                 {
                     case currentPlayerState.PLAYER:
@@ -56,6 +63,7 @@ public class LevelManager : MonoBehaviour
                         Destroy(soul.gameObject);
                         break;
                 }
+                StartCoroutine("gameOver");
             }
         }
     }
@@ -76,6 +84,11 @@ public class LevelManager : MonoBehaviour
         if(currentHealth < maxHealth){
             currentHealth = maxHealth;
         }
+    }
+
+    private IEnumerator gameOver(){
+        yield return new WaitForSeconds(respawnTime);
+        levelLoader.loadLevel(0);
     }
 
     public IEnumerator Respawn(){

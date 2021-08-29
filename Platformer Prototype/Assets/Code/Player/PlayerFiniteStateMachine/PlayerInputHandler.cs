@@ -23,15 +23,19 @@ public class PlayerInputHandler : MonoBehaviour
 
     private float dashInputStartTime;
     private float jumpInputStartTime;
+    private PauseMenu pauseMenu;
 
     private void Start(){
         playerInput = GetComponent<PlayerInput>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     private void Update() {
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
     }
+
+    public void OnPauseInput(InputAction.CallbackContext context) => pauseMenu.PauseUpdate();
 
     public void OnMoveInput(InputAction.CallbackContext context){
         RawMovementInput = context.ReadValue<Vector2>();

@@ -18,7 +18,6 @@ public class Checkpoint : MonoBehaviour
         if(other.tag == "Player"){
             if(!pointSet){
                 Debug.Log("Active");
-
                 if(levelManager.state == LevelManager.currentPlayerState.PLAYER){
                     FindObjectOfType<Player>().respawnPosition = transform.position;
                 }

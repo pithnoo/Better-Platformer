@@ -13,8 +13,9 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
 
     void Start() {
-        //Initialise menu theme
+        Play(currentSong);
     }
+
     void Awake()
     {
         if(instance == null){

@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -576354014268724891, guid: f87c9b2e18351514893956e5d9c28ca2, type: 3}
-  m_Color: {r: 0.15265143, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -6905963577513531043, guid: d4ac49203d4fd25448a9601acd694254, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,6 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullRestore: 0
   healthToRestore: 2
+  source: {fileID: 8824587178017215799, guid: feae3be994d098c4c8eaef7e671d2908, type: 3}
+  particle: {fileID: 9167632770697859185, guid: f28feae5d4bd84044bdee9d6c05bb685, type: 3}
 --- !u!114 &-8930781262611746763
 MonoBehaviour:
   m_ObjectHideFlags: 0
