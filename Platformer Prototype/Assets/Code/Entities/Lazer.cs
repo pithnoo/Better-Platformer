@@ -33,6 +33,10 @@ public class Lazer : MonoBehaviour
         }
     }
 
+    void OnDisable() {
+        transform.Find("Lazer").GetComponent<BoxCollider2D>().enabled = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

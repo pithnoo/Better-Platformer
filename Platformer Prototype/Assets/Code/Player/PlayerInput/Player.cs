@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Vector3 respawnPosition;
     public GameObject respawnParticle;
+    public bool canMove = true;
     
     #endregion
     

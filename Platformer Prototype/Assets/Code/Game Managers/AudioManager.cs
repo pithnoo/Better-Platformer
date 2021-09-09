@@ -8,12 +8,12 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
-    public string currentSong;
+    public string currentTheme;
 
     // Start is called before the first frame update
 
     void Start() {
-        Play(currentSong);
+        Play(currentTheme);
     }
 
     void Awake()

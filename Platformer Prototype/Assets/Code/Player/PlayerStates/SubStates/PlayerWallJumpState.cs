@@ -15,6 +15,8 @@ public class PlayerWallJumpState : PlayerAbilityState
     {
         base.Enter();
 
+        GameObject.FindObjectOfType<AudioManager>().Play("Jump");
+
         player.InputHandler.UseJumpInput();
         player.JumpState.ResetAmountOfJumps();
         player.SetVelocity(playerData.wallJumpVelocity, playerData.wallJumpAngle, wallJumpDirection);

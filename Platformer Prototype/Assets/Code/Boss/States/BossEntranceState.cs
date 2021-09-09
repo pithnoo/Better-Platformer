@@ -49,10 +49,12 @@ public class BossEntranceState : BossAttackState
         switch (stage)
         {
             case 1:
+                GameObject.FindObjectOfType<AudioManager>().Play("BossStart");
                 EntranceShake();
                 EntranceParticle1();
                 break;
             case 2:
+                GameObject.FindObjectOfType<AudioManager>().Play("BossEnd");
                 EntranceShake2();
                 EntranceParticle2();
                 break;

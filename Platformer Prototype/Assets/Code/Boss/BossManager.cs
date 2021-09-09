@@ -16,8 +16,11 @@ public class BossManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
+            FindObjectOfType<Player>().canMove = false;
             //change current camera
             if(!hasSwitched){
+                FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
+                FindObjectOfType<AudioManager>().Play("BossGate");
                 cs.SwitchState();
                 hasSwitched = true;
             }

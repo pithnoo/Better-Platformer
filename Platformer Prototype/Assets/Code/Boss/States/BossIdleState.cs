@@ -10,6 +10,7 @@ public class BossIdleState : BossState
     private float flightSpeed;
     private int numAttacks;
     private int maxAttacks;
+    private bool hasActivated = false;
     public BossIdleState(Boss boss, BossStateMachine stateMachine, BossData bossData, string animBoolName) : base(boss, stateMachine, bossData, animBoolName)
     {
     }
@@ -21,6 +22,13 @@ public class BossIdleState : BossState
     public override void Enter()
     {
         base.Enter();
+        GameObject.FindObjectOfType<AudioManager>().Play("BossWarp");
+
+        if(!hasActivated){
+            GameObject.FindObjectOfType<Player>().canMove = true;
+            hasActivated = true;
+        }
+
         boss.bossTrail.gameObject.SetActive(true);
 
         if(boss.currentHealth <= (bossData.maxHealth / 2)){
@@ -79,11 +87,17 @@ public class BossIdleState : BossState
         }
         else{
             //execute burst attack
-            stateMachine.ChangeState(boss.burstAttack);
+            if(boss.attackType == Boss.bossAttackType.SOUL){
+                stateMachine.ChangeState(boss.burstAttack);
+            }
+            else{
+                stateMachine.ChangeState(boss.burstAttackSoul);
+            }
         }
     }
 
     private void DecideAttackPlayer(){
+        GameObject.FindObjectOfType<AudioManager>().Play("BossWarp");
         switch (currentAttack)
         {
             case 1:
@@ -106,6 +120,7 @@ public class BossIdleState : BossState
     }
 
     private void DecideAttackSoul(){
+        GameObject.FindObjectOfType<AudioManager>().Play("BossWarp");
         switch (currentAttack)
         {
             case 1:

@@ -12,26 +12,29 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public LevelManager levelManager;
     public LevelLoader levelLoader;
-    public AudioManager audioManager;
+    public bool canPause = true;
+
 
     void Start() {
         levelManager = FindObjectOfType<LevelManager>();
         levelLoader = FindObjectOfType<LevelLoader>();
-        //audioManager = FindObjectOfType<AudioManager>();
     }
 
 
     public void PauseUpdate(){
-        if(GameIsPaused && !levelManager.isGameOver){
-            Resume();
-        }
-        else{
-            Pause();
+        if(canPause){
+            if (GameIsPaused && !levelManager.isGameOver)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
     public void Resume(){
-        // FindObjectOfType<AudioManager>().Play("Pause");
         AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -39,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Pause(){
+        FindObjectOfType<AudioManager>().Play("ButtonSelect");
         AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
@@ -46,9 +50,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void LoadMenu(){
-        AudioListener.pause = true;
-        AudioListener.volume = 1f;
-        
+        canPause = false;
+        FindObjectOfType<AudioManager>().Play("ButtonSelect");
+        levelLoader.loadMenu();
+        AudioListener.pause = false;
         Time.timeScale = 1;
     }
 

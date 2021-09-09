@@ -8,6 +8,7 @@ public class LazerStill : MonoBehaviour
     private Animator anim;
     void OnEnable()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
         boss = FindObjectOfType<Boss>();
         anim = GetComponent<Animator>();
 
@@ -29,5 +30,9 @@ public class LazerStill : MonoBehaviour
             anim.SetBool("LazerSecond", false);
         }
 
+    }
+
+    void OnDisable() {
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

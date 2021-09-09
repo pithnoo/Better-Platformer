@@ -20,6 +20,8 @@ public class PlayerDashState : PlayerAbilityState
 
     public override void Enter(){
         base.Enter();
+        GameObject.FindObjectOfType<AudioManager>().Play("Dash");
+
         isHolding = true;
         CanDash = false;
         player.InputHandler.UseDashInput();

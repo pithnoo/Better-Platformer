@@ -24,11 +24,14 @@ public class HealthRestore : MonoBehaviour
                 
                 Instantiate(particle, transform.position, transform.rotation);
                 if(!fullRestore){
+                    FindObjectOfType<AudioManager>().Play("Health");
                     levelManager.healthRestore(healthToRestore);
                 }
                 else{
+                    FindObjectOfType<AudioManager>().Play("Collectable");
                     levelManager.fullRestore();
                 }
+                Debug.Log(levelManager.currentHealth);
                 healthManager.UpdateHealth(levelManager.currentHealth);
                 gameObject.SetActive(false);
             }

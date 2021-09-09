@@ -71,6 +71,7 @@ public class Portal : MonoBehaviour
         isWithPlayer = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsPlayer);
 
         if(isWithPlayer && levelManager.player.isDashing){
+            FindObjectOfType<AudioManager>().Play("PortalWarp");
             levelManager.player.isDashing = false;
             Destroy(levelManager.player.gameObject);
 
@@ -87,6 +88,7 @@ public class Portal : MonoBehaviour
         isWithSoul = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsSoul);
 
         if(isWithSoul){
+            FindObjectOfType<AudioManager>().Play("PortalWarp");
             //source.GenerateImpulse();
             Destroy(levelManager.soul.gameObject);
 
@@ -105,6 +107,7 @@ public class Portal : MonoBehaviour
         isWithPlayer = Physics2D.OverlapCircle(transform.position, detectionRadius, whatIsPlayer);
         if (isWithPlayer || isWithSoul)
         {
+            FindObjectOfType<AudioManager>().Play("PortalWarp");
             StartCoroutine("levelLoad");
         }
     }

@@ -57,13 +57,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: BossEnd
-    clip: {fileID: 8300000, guid: 62bb5ee1aac2bc64398372d30b9161a8, type: 3}
+    clip: {fileID: 8300000, guid: 060d549cb0d0a9845a0fc504a1030275, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BossStart
-    clip: {fileID: 8300000, guid: a4c52ef36f3a6a24c86982131be32236, type: 3}
+    clip: {fileID: 8300000, guid: 9bb63b5f5ba40b444a6485dd037e4ba4, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
@@ -74,4 +74,70 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  currentSong: MenuTheme
+  - name: Jump
+    clip: {fileID: 8300000, guid: f21880ed3a59b3e489d2e3d715a7568f, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: a32dab1ba2acaa748821faf74d66d844, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Collectable
+    clip: {fileID: 8300000, guid: 45519af174eb41d4ab8f745b6b1e1f76, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Health
+    clip: {fileID: 8300000, guid: 226e3bbf20544594db502a8d70a2c221, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossGate
+    clip: {fileID: 8300000, guid: e41963638de0acc479b3814e2cdfa3c1, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonSelect
+    clip: {fileID: 8300000, guid: 55642923b62415d41bae063d7f02fe7c, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 09d36404fdfb24c4d91bb3e95a3df832, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerReset
+    clip: {fileID: 8300000, guid: 69c8bf4cb80abea46b410fc07e49508e, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 00026cc7d78e1d1479e59573d74be99a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PortalWarp
+    clip: {fileID: 8300000, guid: 87a7fd412b21a2848bea332e2b01a979, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossWarp
+    clip: {fileID: 8300000, guid: c89f006f7fdbc364a8a4301e8260e226, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  currentTheme: LevelTheme

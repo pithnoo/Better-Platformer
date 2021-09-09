@@ -13,6 +13,8 @@ public class PlayerJumpState : PlayerAbilityState
     public override void Enter()
     {
         base.Enter();
+
+        GameObject.FindObjectOfType<AudioManager>().Play("Jump");
         
         player.InputHandler.UseJumpInput();
         player.SetVelocityY(playerData.jumpVelocity);

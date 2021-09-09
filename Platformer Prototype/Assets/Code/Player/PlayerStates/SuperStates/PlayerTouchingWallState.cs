@@ -47,7 +47,7 @@ public class PlayerTouchingWallState : PlayerState
         JumpInput = player.InputHandler.JumpInput;
         DashInput = player.InputHandler.DashInput;
 
-        if(JumpInput){
+        if(JumpInput && player.canMove){
             player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
             stateMachine.ChangeState(player.WallJumpState);
         }
@@ -57,7 +57,7 @@ public class PlayerTouchingWallState : PlayerState
         else if(!isTouchingWall || (xInput != player.FacingDirection && !GrabInput)){
             stateMachine.ChangeState(player.InAirState);
         }
-        else if(DashInput && player.DashState.CheckIfCanDash()){
+        else if(DashInput && player.DashState.CheckIfCanDash() && player.canMove){
             player.DashShake();
             stateMachine.ChangeState(player.DashState);
         }

@@ -42,7 +42,7 @@ public class PlayerGroundedState : PlayerState
         GrabInput = player.InputHandler.GrabInput;
         DashInput = player.InputHandler.DashInput;
 
-        if(JumpInput && player.JumpState.CanJump()){
+        if(JumpInput && player.JumpState.CanJump() && player.canMove){
             stateMachine.ChangeState(player.JumpState);
         }
         else if(!isGrounded){
@@ -52,7 +52,7 @@ public class PlayerGroundedState : PlayerState
         else if(isTouchingWall && GrabInput){
             stateMachine.ChangeState(player.WallGrabState);
         }
-        else if(DashInput && player.DashState.CheckIfCanDash()){
+        else if(DashInput && player.DashState.CheckIfCanDash() && player.canMove){
             player.DashShake();
             stateMachine.ChangeState(player.DashState);
         }

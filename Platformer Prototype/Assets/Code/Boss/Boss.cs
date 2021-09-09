@@ -32,7 +32,7 @@ public class Boss : MonoBehaviour
     public CinemachineSwitcher cs;
     private SpriteRenderer SR;
     public bool secondPhase;
-    public GameObject bossVunerable;
+    public GameObject bossVunerable, bossVunerable2;
     public GameObject bossGate;
 
     public enum bossAttackType{
@@ -53,6 +53,7 @@ public class Boss : MonoBehaviour
     public BossEntranceState bossEntranceState {get; private set;}
     public BossDeadState bossDeadState {get; private set;}
     public BurstAttack burstAttack {get; private set;}
+    public BurstAttackSoul burstAttackSoul {get; private set;}
     public DiskAttack diskAttack {get; private set;}
     public LazerAttack lazerAttack {get; private set;}
     public SpikeAttack spikeAttack {get; private set;}
@@ -86,7 +87,8 @@ public class Boss : MonoBehaviour
         bossIdleState = new BossIdleState(this, stateMachine, bossData, "idle");
         bossEntranceState = new BossEntranceState(this, stateMachine, bossData, "entrance", attackPosition);
         bossDeadState = new BossDeadState(this, stateMachine, bossData, "dead", attackPosition);
-        burstAttack = new BurstAttack(this, stateMachine, bossData, "burst", attackPosition);
+        burstAttack = new BurstAttack(this, stateMachine, bossData, "burstPlayer", attackPosition);
+        burstAttackSoul = new BurstAttackSoul(this, stateMachine, bossData, "burstSoul", attackPosition);
         diskAttack = new DiskAttack(this, stateMachine, bossData, "disk", attackPosition);
         lazerAttack = new LazerAttack(this, stateMachine, bossData, "lazer", attackPosition);
         spikeAttack = new SpikeAttack(this, stateMachine, bossData, "spike", attackPosition);
@@ -221,6 +223,7 @@ public class Boss : MonoBehaviour
 
     private void spawnSoul(){
         if(levelManager.player.isDashing){
+            FindObjectOfType<AudioManager>().Play("PortalWarp");
             //levelManager.currentHealth++;
             levelManager.player.isDashing = false;
             Destroy(levelManager.player.gameObject);
@@ -239,6 +242,7 @@ public class Boss : MonoBehaviour
     }
 
     private void spawnPlayer(){
+        FindObjectOfType<AudioManager>().Play("PortalWarp");
         //source.GenerateImpulse();
         //levelManager.currentHealth++;
         Destroy(levelManager.soul.gameObject);

@@ -51,6 +51,8 @@ public class LevelManager : MonoBehaviour
             StartCoroutine("InvincibleTimer");
             if (currentHealth <= 0)
             {
+                FindObjectOfType<AudioManager>().Play("PlayerReset");
+                //FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
                 isGameOver = true;
                 switch (state)
                 {
@@ -64,6 +66,9 @@ public class LevelManager : MonoBehaviour
                         break;
                 }
                 StartCoroutine("gameOver");
+            }
+            else{
+                FindObjectOfType<AudioManager>().Play("Hurt");
             }
         }
     }
@@ -88,7 +93,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator gameOver(){
         yield return new WaitForSeconds(respawnTime);
-        levelLoader.loadLevel(0);
+        levelLoader.loadMenu();
     }
 
     public IEnumerator Respawn(){

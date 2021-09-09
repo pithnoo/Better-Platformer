@@ -43,10 +43,12 @@ public class BossDeadState : BossAttackState
         switch (stage)
         {
             case 1:
+                GameObject.FindObjectOfType<AudioManager>().Play("BossStart");
                 deathParticle1();
                 DeadShake();
                 break;
             case 2:
+                GameObject.FindObjectOfType<AudioManager>().Play("BossEnd");
                 deathParticle2();
                 DeadShake2();
                 break;
