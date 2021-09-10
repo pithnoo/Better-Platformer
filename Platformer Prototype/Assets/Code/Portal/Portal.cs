@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Portal : MonoBehaviour
     private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private CinemachineImpulseSource source;
     private LevelLoader levelLoader;
+
     #endregion
 
     public enum PortalType{
@@ -37,6 +39,7 @@ public class Portal : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
         levelLoader = FindObjectOfType<LevelLoader>();
+
         
         // switch(state){
         //     case PortalType.PLAYER:

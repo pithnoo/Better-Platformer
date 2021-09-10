@@ -47,6 +47,7 @@ public class BurstAttack : BossAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+        GameObject.FindObjectOfType<AudioManager>().Play("BossAttack");
         boss.bossTrail.gameObject.SetActive(false);
         boss.bossInvincible = false;
         boss.bossVunerable.SetActive(true);

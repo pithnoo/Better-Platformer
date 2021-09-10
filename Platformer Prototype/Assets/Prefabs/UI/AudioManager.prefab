@@ -140,4 +140,16 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: BossAttack
+    clip: {fileID: 8300000, guid: 36a2f4e4d7ee66a42b5b27308f8adf2b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lazer
+    clip: {fileID: 8300000, guid: 8e7088b63d626244297303e2bb72bef2, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   currentTheme: LevelTheme

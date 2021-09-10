@@ -8,8 +8,12 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime;
     public Animator transition;
     private AudioManager audioManager;
+    [SerializeField] private int nextSceneLoad;
 
     // Start is called before the first frame update
+    void Start() {
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+    }
 
     public void loadLevel(int sceneNumber) => StartCoroutine(LoadLevel(sceneNumber));
     public void loadMenu() => StartCoroutine("LoadMenu");
@@ -44,6 +48,11 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator LoadAndSave(int levelIndex){
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
+
+        if(nextSceneLoad > PlayerPrefs.GetInt("levelAt")){
+            PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+        }
+
         SceneManager.LoadSceneAsync(levelIndex);
     }
 }

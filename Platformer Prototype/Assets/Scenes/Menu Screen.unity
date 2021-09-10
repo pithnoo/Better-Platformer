@@ -5140,6 +5140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093707376}
+  - component: {fileID: 2093707377}
   m_Layer: 5
   m_Name: LevelSelectScreen
   m_TagString: Untagged
@@ -5174,6 +5175,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2093707377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093707375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfb62ba8aa1a4c41a052e6e0cde367e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlButtons:
+  - {fileID: 552850220}
+  - {fileID: 46780386}
+  - {fileID: 1886488234}
+  - {fileID: 2122172062}
+  - {fileID: 1254347962}
 --- !u!1 &2107177775
 GameObject:
   m_ObjectHideFlags: 0

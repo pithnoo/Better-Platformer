@@ -11,6 +11,7 @@ public class LevelLazer : MonoBehaviour
         animator.SetBool("LazerFirst", true);
     }
 
+
     void Update() {
         if(straightMovingObject.reachedPoint){
             gameObject.SetActive(false);
