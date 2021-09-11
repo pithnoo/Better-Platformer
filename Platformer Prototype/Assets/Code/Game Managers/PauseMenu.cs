@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Resume(){
+        Cursor.visible = false;
         AudioListener.pause = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Pause(){
+        Cursor.visible = true;
         FindObjectOfType<AudioManager>().Play("ButtonSelect");
         AudioListener.pause = true;
         pauseMenuUI.SetActive(true);

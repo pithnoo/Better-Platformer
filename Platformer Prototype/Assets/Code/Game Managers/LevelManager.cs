@@ -36,11 +36,6 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ResetPlayerCheck() => player = FindObjectOfType<Player>();
     public void ResetSoulCheck() => soul = FindObjectOfType<Soul>();

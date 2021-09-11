@@ -21,6 +21,7 @@ public class LevelLoader : MonoBehaviour
     public void loadNextLevel() => StartCoroutine(LoadAndSave(SceneManager.GetActiveScene().buildIndex + 1));
 
     private IEnumerator LoadLevel(int levelIndex){
+        Cursor.visible = false;
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.stopPlaying(audioManager.currentTheme);
 

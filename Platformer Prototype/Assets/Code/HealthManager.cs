@@ -8,11 +8,11 @@ public class HealthManager : MonoBehaviour
     public Image[] hearts;
     [SerializeField] private Sprite heartEmpty, heartHalf, heartFull;
     
-    public void UpdateHealth(int currentHealth){
+    public void UpdateHealth(int _currentHealth){
+        //Debug.Log(_currentHealth);
         for(int i = 0; i < hearts.Length; i++){
 
-            int remainder = currentHealth - (i * 2);
-            //Debug.Log(remainder);
+            int remainder = Mathf.Clamp(_currentHealth - (i * 2), 0, 2);
             switch(remainder){
                 case 0:
                 hearts[i].sprite = heartEmpty;

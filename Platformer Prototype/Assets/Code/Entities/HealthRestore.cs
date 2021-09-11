@@ -31,7 +31,6 @@ public class HealthRestore : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("Collectable");
                     levelManager.fullRestore();
                 }
-                Debug.Log(levelManager.currentHealth);
                 healthManager.UpdateHealth(levelManager.currentHealth);
                 gameObject.SetActive(false);
             }
