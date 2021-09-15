@@ -81,12 +81,11 @@ public class LevelManager : MonoBehaviour
     }
 
     public void fullRestore(){
-        if(currentHealth < maxHealth){
-            currentHealth = maxHealth;
-        }
+        currentHealth = maxHealth;
     }
 
     private IEnumerator gameOver(){
+        Cursor.visible = true;
         yield return new WaitForSeconds(respawnTime);
         levelLoader.loadMenu();
     }

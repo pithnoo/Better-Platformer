@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+public static class Collectable{
+    public static bool[] itemCollected = new bool[5];
+    public static void hasCollected(int levelCollectedFrom){
+        itemCollected[levelCollectedFrom] = true;
+    }
+}
 public class LevelLoader : MonoBehaviour
 {
     public float transitionTime;

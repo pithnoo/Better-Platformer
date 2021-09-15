@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class HealthRestore : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class HealthRestore : MonoBehaviour
                 }
                 else{
                     FindObjectOfType<AudioManager>().Play("Collectable");
-                    levelManager.fullRestore();
+                    PlayerPrefs.SetInt("Collectable" + (SceneManager.GetActiveScene().buildIndex-1).ToString(), 1);
                 }
                 healthManager.UpdateHealth(levelManager.currentHealth);
                 gameObject.SetActive(false);
