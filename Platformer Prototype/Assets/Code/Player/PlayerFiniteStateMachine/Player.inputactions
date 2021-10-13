@@ -67,7 +67,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Arrow Keys",
+                    "name": "WASD",
                     "id": "a2e6af15-530b-4d4b-9053-04442d4b88f3",
                     "path": "2DVector",
                     "interactions": "",
@@ -80,7 +80,7 @@
                 {
                     "name": "up",
                     "id": "6ad01d6c-23a4-4b2f-ab3e-e2375c592163",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -91,7 +91,7 @@
                 {
                     "name": "down",
                     "id": "451e1758-3614-48ae-aee9-275b5857b918",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -102,7 +102,7 @@
                 {
                     "name": "left",
                     "id": "452e6749-4128-42fe-a0f9-0861b60299f6",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -113,7 +113,7 @@
                 {
                     "name": "right",
                     "id": "34b2d140-2e8c-48b4-b9cd-386c6d6dfa73",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -135,7 +135,7 @@
                 {
                     "name": "",
                     "id": "a07b772c-0b64-4e20-98a0-e50f91c3fea3",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -146,7 +146,7 @@
                 {
                     "name": "",
                     "id": "c293db06-eea3-481d-88ed-149ce2e8ad69",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -166,7 +166,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Arrow Keys",
+                    "name": "WASD",
                     "id": "bb231bef-51dd-490e-9d6d-ff1e36e6f4fe",
                     "path": "2DVector",
                     "interactions": "",
@@ -179,7 +179,7 @@
                 {
                     "name": "up",
                     "id": "8a6c1f12-2e11-4478-a2c8-b724961cf8df",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -190,7 +190,7 @@
                 {
                     "name": "down",
                     "id": "1be5cca1-3afb-4fc7-aae8-f25e1042a2aa",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -201,7 +201,7 @@
                 {
                     "name": "left",
                     "id": "8e809706-ac3b-416b-833e-22edd034326c",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -212,7 +212,7 @@
                 {
                     "name": "right",
                     "id": "23f93971-5ea5-4db9-a1df-791609b193b1",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",

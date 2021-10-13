@@ -134,7 +134,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Wall Jump
 
-        [SPACE] + [left/right arrow]'
+        [SPACE] + [A/D]'
       objectReference: {fileID: 0}
     - target: {fileID: 7268282194796630500, guid: 49637c9223162294199ea0e2991b2694, type: 3}
       propertyPath: m_Camera
@@ -217,7 +217,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Wall Climb
 
-        [s] + [up/down arrow]'
+        [K] + [W/S]'
       objectReference: {fileID: 0}
     - target: {fileID: 7268282194796630500, guid: 49637c9223162294199ea0e2991b2694, type: 3}
       propertyPath: m_Camera
@@ -7667,7 +7667,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Wall Grab
 
-        [s]'
+        [K]'
       objectReference: {fileID: 0}
     - target: {fileID: 7268282194796630500, guid: 49637c9223162294199ea0e2991b2694, type: 3}
       propertyPath: m_Camera
@@ -7869,7 +7869,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Dash
 
-        [Direction] + [d]'
+        [Direction] + [J]'
       objectReference: {fileID: 0}
     - target: {fileID: 7268282194796630500, guid: 49637c9223162294199ea0e2991b2694, type: 3}
       propertyPath: m_Camera
