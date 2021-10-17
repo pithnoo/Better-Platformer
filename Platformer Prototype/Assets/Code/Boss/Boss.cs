@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     public float currentHealth;
     protected bool isDead;
     private LevelManager levelManager;
+    public LevelLoader levelLoader;
     private Player player;
     private Soul soul;
     private Portal portal;
@@ -105,6 +106,7 @@ public class Boss : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
         cs = FindObjectOfType<CinemachineSwitcher>();
+        levelLoader = FindObjectOfType<LevelLoader>();
 
         //bossTrail.gameObject.SetActive(false);
         currentHealth = bossData.maxHealth;

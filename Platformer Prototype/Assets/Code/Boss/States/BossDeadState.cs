@@ -18,6 +18,8 @@ public class BossDeadState : BossAttackState
     {
         base.Enter();
         stage = 1;
+        PlayerPrefs.SetInt("Collectable4", 1);
+        //GameObject.FindObjectOfType<AudioManager>().Play("BossTheme");
     }
 
     public override void Exit()
@@ -43,6 +45,7 @@ public class BossDeadState : BossAttackState
         switch (stage)
         {
             case 1:
+                boss.bossTrail.gameObject.SetActive(false);
                 GameObject.FindObjectOfType<AudioManager>().Play("BossStart");
                 deathParticle1();
                 DeadShake();
@@ -53,10 +56,11 @@ public class BossDeadState : BossAttackState
                 DeadShake2();
                 break;
             case 3:
-                boss.cs.SwitchState();
+                //boss.cs.SwitchState();
                 GameObject.Instantiate(bossData.gateParticle, boss.bossGate.transform.position, boss.bossGate.transform.rotation);
                 boss.bossGate.SetActive(false);
                 boss.gameObject.SetActive(false);
+                boss.levelLoader.finishGame();
                 break;
         }
 

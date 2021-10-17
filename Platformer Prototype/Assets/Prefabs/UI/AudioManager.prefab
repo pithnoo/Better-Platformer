@@ -51,7 +51,7 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: IntroTheme
-    clip: {fileID: 8300000, guid: 3838680097672124cb0639f753a56df2, type: 3}
+    clip: {fileID: 8300000, guid: a172e87d09056a849ae55dad476ecac9, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -149,6 +149,18 @@ MonoBehaviour:
   - name: Lazer
     clip: {fileID: 8300000, guid: 8e7088b63d626244297303e2bb72bef2, type: 3}
     volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Heartbeat
+    clip: {fileID: 8300000, guid: 51b6d6ab067e2324f9edb10724301e9d, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IntroScene
+    clip: {fileID: 8300000, guid: a172e87d09056a849ae55dad476ecac9, type: 3}
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}

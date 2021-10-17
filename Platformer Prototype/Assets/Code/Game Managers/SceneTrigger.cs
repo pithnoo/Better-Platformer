@@ -6,24 +6,44 @@ using Cinemachine;
 public class SceneTrigger : MonoBehaviour
 {
     [SerializeField] private CinemachineImpulseSource source1, source2;
-    [SerializeField] private GameObject particle1, particle2;
+    [SerializeField] private GameObject particle1, particle2, particle3;
     private CinemachineSwitcher cinemachineSwitcher;
     public Transform objectPosition;
+    public LevelLoader levelLoader;
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        cinemachineSwitcher = FindObjectOfType<CinemachineSwitcher>();
-        //cinemachineSwitcher.SwitchState();
+        levelLoader = FindObjectOfType<LevelLoader>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
-    public void sceneShake1() => source1.GenerateImpulse();
-    public void sceneShake2() => source2.GenerateImpulse();
-    public void sceneParticle(){
+    public void startTheme() {
+        audioManager.Play("IntroTheme");
+    }
+    public void heartBeat(){
+        audioManager.Play("Heartbeat");
         Instantiate(particle1, objectPosition.transform.position, objectPosition.transform.rotation);
+    }
+        
+    public void sceneShake1(){
+        audioManager.Play("BossStart");
+        source1.GenerateImpulse();
+    }
+
+    public void cutHeart() => audioManager.stopPlaying("Heartbeat");
+    public void sceneShake2(){
+        audioManager.Play("BossEnd");
+        source2.GenerateImpulse();
+    }
+    public void sceneParticle(){
         Instantiate(particle2, objectPosition.transform.position, objectPosition.transform.rotation);
+        Instantiate(particle3, objectPosition.transform.position, objectPosition.transform.rotation);
     }
     
-    public void switchBack() => cinemachineSwitcher.SwitchState();
+    public void finishStart(){
+        levelLoader.loadLevel(1);
+    }
         
 }

@@ -17,4 +17,7 @@ public class LevelLazer : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    void OnDisable() {
+        transform.Find("Lazer").GetComponent<BoxCollider2D>().enabled = false;
+    }
 }

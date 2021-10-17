@@ -7,10 +7,17 @@ public class Menu : MonoBehaviour
     public GameObject TitleScreen, LevelSelectScreen;
     public LevelLoader levelLoader;
 
-
+    void Start() {
+        Cursor.visible = true;
+    }
     public void LoadLevel(int levelToLoad){
         FindObjectOfType<AudioManager>().Play("ButtonSelect");
         levelLoader.loadLevel(levelToLoad);
+    }
+
+    public void startGame(){
+        FindObjectOfType<AudioManager>().Play("ButtonSelect");
+        levelLoader.startScene();
     }
 
     public void Title(){

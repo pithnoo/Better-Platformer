@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public static class Collectable{
-    public static bool[] itemCollected = new bool[5];
-    public static void hasCollected(int levelCollectedFrom){
-        itemCollected[levelCollectedFrom] = true;
-    }
-}
+// public static class Collectable{
+//     public static bool[] itemCollected = new bool[5];
+//     public static void hasCollected(int levelCollectedFrom){
+//         itemCollected[levelCollectedFrom] = true;
+//     }
+// }
 public class LevelLoader : MonoBehaviour
 {
     public float transitionTime;
@@ -22,6 +22,8 @@ public class LevelLoader : MonoBehaviour
 
     public void loadLevel(int sceneNumber) => StartCoroutine(LoadLevel(sceneNumber));
     public void loadMenu() => StartCoroutine("LoadMenu");
+    public void finishGame() => StartCoroutine("FinishGame");
+    public void startScene() => StartCoroutine("StartScene");
 
     public void loadNextLevel() => StartCoroutine(LoadAndSave(SceneManager.GetActiveScene().buildIndex + 1));
 
@@ -49,6 +51,19 @@ public class LevelLoader : MonoBehaviour
 
         audioManager.Play("MenuTheme");
         audioManager.currentTheme = "MenuTheme";
+    }
+
+    private IEnumerator StartScene(){
+        audioManager.stopPlaying(audioManager.currentTheme);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadSceneAsync(6);
+    }
+
+    private IEnumerator FinishGame(){
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadSceneAsync(6);
     }
 
     private IEnumerator LoadAndSave(int levelIndex){
