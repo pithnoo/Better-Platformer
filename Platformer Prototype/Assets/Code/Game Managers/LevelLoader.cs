@@ -54,10 +54,12 @@ public class LevelLoader : MonoBehaviour
     }
 
     private IEnumerator StartScene(){
+        Cursor.visible = false;
+        audioManager = FindObjectOfType<AudioManager>();
         audioManager.stopPlaying(audioManager.currentTheme);
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadSceneAsync(6);
+        SceneManager.LoadSceneAsync(7);
     }
 
     private IEnumerator FinishGame(){

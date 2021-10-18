@@ -17,7 +17,7 @@ MonoBehaviour:
     m_Bits: 128
   maxHealth: 8
   collisionDamage: 1
-  maxAttacks: 0
+  maxAttacks: 4
   xScaleFlight: 10
   yScaleFlight: 2
   minIdleTime: 3

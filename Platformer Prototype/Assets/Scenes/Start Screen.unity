@@ -432,10 +432,6 @@ PrefabInstance:
       propertyPath: currentTheme
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2166301634744076840, guid: d9e3d0c22533d394d959d43cb67a7613, type: 3}
-      propertyPath: sounds.Array.size
-      value: 19
-      objectReference: {fileID: 0}
     - target: {fileID: 2166301634744076841, guid: d9e3d0c22533d394d959d43cb67a7613, type: 3}
       propertyPath: m_RootOrder
       value: 2

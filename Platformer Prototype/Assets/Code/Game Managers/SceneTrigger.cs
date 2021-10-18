@@ -16,10 +16,11 @@ public class SceneTrigger : MonoBehaviour
     void Start()
     {
         levelLoader = FindObjectOfType<LevelLoader>();
-        audioManager = FindObjectOfType<AudioManager>();
+        //audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void startTheme() {
+        audioManager = FindObjectOfType<AudioManager>();
         audioManager.Play("IntroTheme");
     }
     public void heartBeat(){
