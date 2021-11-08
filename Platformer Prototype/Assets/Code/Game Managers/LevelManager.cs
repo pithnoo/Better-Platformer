@@ -91,27 +91,35 @@ public class LevelManager : MonoBehaviour
     }
 
     public IEnumerator Respawn(){
-        yield return new WaitForSeconds(respawnTime);
 
-        //respawn player
-        switch(state){
-            case currentPlayerState.PLAYER:
-                player.transform.position = new Vector2(player.respawnPosition.x, player.respawnPosition.y + 4);
-                player.respawnParticle.SetActive(true);
-                player.gameObject.SetActive(true);
-                break;
-            case currentPlayerState.SOUL:
-                soul.transform.position = new Vector2(soul.respawnPosition.x, soul.respawnPosition.y);
-                soul.respawnParticle.SetActive(true);
-                soul.gameObject.SetActive(true);
-                break;
+        if(currentHealth <= 0){
+            yield return new WaitForSeconds(respawnTime/2);
+            isGameOver = true;
+            StartCoroutine("gameOver");
         }
-
-        if(objectsToReset.Length > 0){
-            for (int i = 0; i < objectsToReset.Length; i++)
+        else{
+            yield return new WaitForSeconds(respawnTime);
+            //respawn player
+            switch (state)
             {
-                objectsToReset[i].ResetObject();
-                objectsToReset[i].gameObject.SetActive(true);
+                case currentPlayerState.PLAYER:
+                    player.transform.position = new Vector2(player.respawnPosition.x, player.respawnPosition.y + 4);
+                    player.respawnParticle.SetActive(true);
+                    player.gameObject.SetActive(true);
+                    break;
+                case currentPlayerState.SOUL:
+                    soul.transform.position = new Vector2(soul.respawnPosition.x, soul.respawnPosition.y);
+                    soul.respawnParticle.SetActive(true);
+                    soul.gameObject.SetActive(true);
+                    break;
+            }
+            if (objectsToReset.Length > 0)
+            {
+                for (int i = 0; i < objectsToReset.Length; i++)
+                {
+                    objectsToReset[i].ResetObject();
+                    objectsToReset[i].gameObject.SetActive(true);
+                }
             }
         }
     }

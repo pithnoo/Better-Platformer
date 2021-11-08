@@ -127,12 +127,12 @@ public class Portal : MonoBehaviour
         }
 
 
-        if (!PlayerPrefs.HasKey("Collectable0"))
+        if (PlayerPrefs.GetInt("Collectable0") == 0)
         {
             if(SceneManager.GetActiveScene().buildIndex == 1){
                 PlayerPrefs.SetInt("Collectable0", 1);
                 Debug.Log("Active");
-            }
+            } 
         }
         yield return new WaitForSeconds(3);
         levelLoader.loadNextLevel();
