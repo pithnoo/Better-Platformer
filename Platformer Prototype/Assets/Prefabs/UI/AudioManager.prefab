@@ -158,4 +158,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: 4d1017553a08c864bbcbce3ac7278c33, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   currentTheme: LevelTheme

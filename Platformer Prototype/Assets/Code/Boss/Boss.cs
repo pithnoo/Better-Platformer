@@ -188,7 +188,7 @@ public class Boss : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Player"){
             if(!bossInvincible){
-                currentHealth--;
+                Debug.Log("Active");
 
                 if(currentHealth <= 0){
                     stateMachine.ChangeState(bossDeadState);
@@ -198,9 +198,11 @@ public class Boss : MonoBehaviour
                     virtualCamera2.m_Follow = levelManager.player.transform;
                 }
                 else{
-                    DecideSpawn();
-                    stateMachine.ChangeState(bossIdleState);
-                    bossIdleState.ResetNumAttacks();
+                    if(collisionState == bossCollisionState.SOUL || levelManager.player.isDashing){
+                        DecideSpawn();
+                        stateMachine.ChangeState(bossIdleState);
+                        bossIdleState.ResetNumAttacks();
+                    }
                 }
 
             }
@@ -212,41 +214,38 @@ public class Boss : MonoBehaviour
         {
             case bossCollisionState.PLAYER:
                 spawnSoul();
-                attackType = bossAttackType.SOUL;
                 bossTrail.ResetSoulCheck();
                 break;
             case bossCollisionState.SOUL:
                 spawnPlayer();
                 bossTrail.ResetPlayerCheck();
-                attackType = bossAttackType.PLAYER;
                 break;
         }
     }
 
     private void spawnSoul(){
-        if(levelManager.player.isDashing){
-            FindObjectOfType<AudioManager>().Play("PortalWarp");
-            //levelManager.currentHealth++;
-            levelManager.player.isDashing = false;
-            Destroy(levelManager.player.gameObject);
+        currentHealth--;
+        attackType = bossAttackType.SOUL;
+        FindObjectOfType<AudioManager>().Play("PortalWarp");
+        levelManager.player.isDashing = false;
+        Destroy(levelManager.player.gameObject);
 
-            Instantiate(bossData.portalParticle, transform.position, transform.rotation);
-            Instantiate(bossData.soulToSpawn, transform.position, transform.rotation);
+        Instantiate(bossData.portalParticle, transform.position, transform.rotation);
+        Instantiate(bossData.soulToSpawn, transform.position, transform.rotation);
 
-            levelManager.ResetSoulCheck();
-            ResetSoulCheck();
-            virtualCamera.m_Follow = levelManager.soul.transform;
-            levelManager.state = LevelManager.currentPlayerState.SOUL;
+        levelManager.ResetSoulCheck();
+        ResetSoulCheck();
+        virtualCamera.m_Follow = levelManager.soul.transform;
+        levelManager.state = LevelManager.currentPlayerState.SOUL;
 
-            bossInvincible = true;
-            collisionState = bossCollisionState.SOUL;
-        }
+        bossInvincible = true;
+        collisionState = bossCollisionState.SOUL;
     }
 
     private void spawnPlayer(){
+        currentHealth--;
         FindObjectOfType<AudioManager>().Play("PortalWarp");
-        //source.GenerateImpulse();
-        //levelManager.currentHealth++;
+        attackType = bossAttackType.PLAYER;
         Destroy(levelManager.soul.gameObject);
 
         Instantiate(bossData.portalParticle, transform.position, transform.rotation);
@@ -256,7 +255,6 @@ public class Boss : MonoBehaviour
         ResetPlayerCheck();
         virtualCamera.m_Follow = levelManager.player.transform;
         levelManager.state = LevelManager.currentPlayerState.PLAYER;
-        //canSpawnPlayer = false;
 
         bossInvincible = true;
         collisionState = bossCollisionState.PLAYER;

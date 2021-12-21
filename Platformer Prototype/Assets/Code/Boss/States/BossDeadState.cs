@@ -46,6 +46,7 @@ public class BossDeadState : BossAttackState
         {
             case 1:
                 boss.bossTrail.gameObject.SetActive(false);
+                GameObject.FindObjectOfType<AudioManager>().stopPlaying("Boss");
                 GameObject.FindObjectOfType<AudioManager>().Play("BossStart");
                 deathParticle1();
                 DeadShake();

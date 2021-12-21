@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
 
     void Start() {
         Cursor.visible = true;
+        //PlayerPrefs.DeleteAll();
     }
     public void LoadLevel(int levelToLoad){
         FindObjectOfType<AudioManager>().Play("ButtonSelect");

@@ -25,6 +25,8 @@ public class BossEntranceState : BossAttackState
     {
         base.Exit();
         //stateMachine.ChangeState(boss.bossIdleState);
+        GameObject.FindObjectOfType<AudioManager>().Play("Boss");
+        GameObject.FindObjectOfType<AudioManager>().currentTheme = "Boss";
     }
     public override void FinishAttack()
     {

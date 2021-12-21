@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
             if (currentHealth <= 0)
             {
                 FindObjectOfType<AudioManager>().Play("PlayerReset");
-                //FindObjectOfType<AudioManager>().stopPlaying("LevelTheme");
+                FindObjectOfType<AudioManager>().stopPlaying(FindObjectOfType<AudioManager>().currentTheme);
                 isGameOver = true;
                 switch (state)
                 {
