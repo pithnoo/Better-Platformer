@@ -1,2 +1,2 @@
 # Soul
-Project focused on learning more of screen shake, player movement and inheritance 
+Game made for the Mark Everson Foundation, focused on learning more of screen shake, player movement and inheritance 
